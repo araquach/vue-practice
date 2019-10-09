@@ -1,8 +1,10 @@
-import Vue from "vue"
-import Test from './components/Test.vue'
+import Vue from 'vue'
+import App from './App.vue'
+// import Test from './components/Test.vue'
 
-Vue.component('test-component', Test)
+// Vue.component('test-component', Test)
 
-const app = new Vue({
-    el: '#app'
-});
+new Vue({
+    el: '#app',
+    render: h => h(App)
+})
