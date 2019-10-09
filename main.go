@@ -34,9 +34,7 @@ func main() {
 	}
 
 	tplIndex = template.Must(template.ParseFiles(
-		"views/layouts/main.gohtml",
-		"views/layouts/nav.gohtml",
-		"views/pages/index.gohtml"))
+		"views/main.gohtml"))
 	if err != nil {
 		panic(err)
 	}
@@ -44,19 +42,10 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", index).Methods("GET")
 
-	// Styles
+	// Assett Handler
 	assetHandler := http.FileServer(http.Dir("./dist/"))
 	assetHandler = http.StripPrefix("/dist/", assetHandler)
 	r.PathPrefix("/dist/").Handler(assetHandler)
-
-	// JS
-	jsHandler := http.FileServer(http.Dir("./dist/"))
-	jsHandler = http.StripPrefix("/dist/", jsHandler)
-	r.PathPrefix("/public/js/").Handler(jsHandler)
-
-	//Images
-	imageHandler := http.FileServer(http.Dir("./public/images/"))
-	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", imageHandler))
 
 	log.Printf("Starting server on %s", port)
 
