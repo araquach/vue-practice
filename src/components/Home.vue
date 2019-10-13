@@ -1,11 +1,23 @@
 <template>
-    <div class="hero is-primary">
-        <div class="hero-body">
-            <h1 class="title is-1">Home</h1>
-        </div>
+    <div>
+        <component :is="selectedHome"/>
     </div>
 </template>
 
 <script>
+    import HomeSplash from '../components/HomeSplash.vue'
+    import HomeInfo from '../components/HomeInfo.vue'
+
+    export default {
+        data() {
+            return {
+                selectedHome: 'home-info'
+            }
+        },
+        components: {
+            homeSplash: HomeSplash,
+            homeInfo: HomeInfo
+        }
+    }
 
 </script>
