@@ -1,18 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Home from './components/Home'
-import About from './components/About'
-import AboutInfo from './components/AboutInfo'
-import Team from './components/Team'
-import TeamInfo from './components/TeamInfo'
-import TeamInd from './components/TeamInd'
+import Home from './components/home/Home'
+import About from './components/about/About'
+import Team from './components/team/Team'
+import TeamInfo from './components/team/TeamInfo'
+import TeamInd from './components/team/TeamInd'
 
 Vue.component('home-component', Home)
 Vue.component('about-component', About)
-Vue.component('about-info-component', AboutInfo)
 Vue.component('team-component', Team)
-Vue.component('team-info-component', TeamInfo)
-Vue.component('team-ind-component', TeamInd)
 
 
 new Vue({

@@ -5,13 +5,13 @@
 </template>
 
 <script>
-    import HomeSplash from '../components/HomeSplash.vue'
-    import HomeInfo from '../components/HomeInfo.vue'
+    import HomeSplash from './HomeSplash.vue'
+    import HomeInfo from './HomeInfo.vue'
 
     export default {
         data() {
             return {
-                selectedHome: 'home-info'
+                selectedHome: 'home-splash'
             }
         },
         components: {
