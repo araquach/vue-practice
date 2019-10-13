@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="switchView">
         <component :is="selectedHome"/>
     </div>
 </template>
@@ -14,6 +14,13 @@
                 selectedHome: 'home-splash'
             }
         },
+
+        methods: {
+            switchView() {
+                this.selectedHome = 'home-info'
+            }
+        },
+
         components: {
             homeSplash: HomeSplash,
             homeInfo: HomeInfo

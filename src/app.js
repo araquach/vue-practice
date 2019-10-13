@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App3.vue'
+import App from './App.vue'
 import Home from './components/home/Home'
 import About from './components/about/About'
 import Team from './components/team/Team'
