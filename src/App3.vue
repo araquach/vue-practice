@@ -1,24 +1,24 @@
 <template>
     <div>
-<!--        <home-component/>-->
-<!--        <about-component/>-->
-<!--        <team-component/>-->
-
         <app-user></app-user>
     </div>
 </template>
 
 <script>
     import User from './components/props/User.vue'
+    import UserDetail from './components/props/UserDetail.vue'
+    import UserEdit from './components/props/UserEdit.vue'
 
     export default {
         data() {
             return {
-                name: 'Adam'
+
             }
         },
         components: {
-            appUser: User
+            appUser: User,
+            appUserDetail: UserDetail,
+            appUserEdit: UserEdit
         }
     }
 </script>

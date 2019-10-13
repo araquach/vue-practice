@@ -1,10 +1,8 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App3.vue'
 import Home from './components/home/Home'
 import About from './components/about/About'
 import Team from './components/team/Team'
-import TeamInfo from './components/team/TeamInfo'
-import TeamInd from './components/team/TeamInd'
 
 Vue.component('home-component', Home)
 Vue.component('about-component', About)
