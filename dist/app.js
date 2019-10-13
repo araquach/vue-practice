@@ -1089,7 +1089,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("The User Component")]),
+    _c("h1", { staticClass: "title has-text-primary" }, [
+      _vm._v("The User Component")
+    ]),
     _vm._v(" "),
     _c("p", [_vm._v("I'm an awesome user")]),
     _vm._v(" "),
