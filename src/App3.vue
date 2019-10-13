@@ -1,6 +1,8 @@
 <template>
     <div>
-        <app-user></app-user>
+        <app-user :name="name"/>
+
+        <app-user-detail/>
     </div>
 </template>
 
@@ -12,7 +14,7 @@
     export default {
         data() {
             return {
-
+                name: "Adam"
             }
         },
         components: {
