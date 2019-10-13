@@ -11,7 +11,7 @@
     export default {
         data() {
             return {
-                selectedTeam: 'team-info'
+                selectedTeam: 'team-splash'
             }
         },
         components: {

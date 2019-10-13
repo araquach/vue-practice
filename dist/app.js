@@ -93,14 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//
-//
-//
-//
-//
-//
-//
-//
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/adam-home/GoSites/practice/vue-practice/src/App.vue: Unexpected token, expected \"{\" (13:0)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at Parser.raise (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:6414:17)\n    at Parser.unexpected (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:7768:16)\n    at Parser.expect (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:7754:28)\n    at Parser.parseNamedImportSpecifiers (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:11366:10)\n    at Parser.parseImport (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:11319:39)\n    at Parser.parseStatementContent (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:10082:27)\n    at Parser.parseStatement (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:9984:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:10560:25)\n    at Parser.parseBlockBody (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:10547:10)\n    at Parser.parseTopLevel (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:9915:10)\n    at Parser.parse (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:11422:17)\n    at parse (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/parser/lib/index.js:11458:38)\n    at parser (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/adam-home/GoSites/practice/vue-practice/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ }),
 
@@ -211,9 +204,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/home/HomeInfo.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -223,6 +218,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['switchView']
+});
 
 /***/ }),
 
@@ -233,6 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//
 //
 //
 //
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      selectedTeam: 'team-info'
+      selectedTeam: 'team-splash'
     };
   },
   components: {
@@ -859,17 +859,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("home-component"),
-      _vm._v(" "),
-      _c("about-component"),
-      _vm._v(" "),
-      _c("team-component")
-    ],
-    1
-  )
+  return _c("div", [_c("app-user-detail")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1013,22 +1003,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hero is-primary" }, [
-      _c("div", { staticClass: "hero-body" }, [
-        _c("h1", { staticClass: "title is-1" }, [_vm._v("Home Info")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Here's some great Information")])
-      ])
+  return _c("div", { staticClass: "hero is-primary" }, [
+    _c("div", { staticClass: "hero-body" }, [
+      _c("h1", { staticClass: "title is-1" }, [_vm._v("Home Info")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Here's some great Information")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { class: _vm.button, attrs: { switchView: _vm.homeSplash } },
+        [_vm._v("Switch back")]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -1050,20 +1039,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hero is-primary" }, [
-      _c("div", { staticClass: "hero-body" }, [
-        _c("h1", { staticClass: "title is-1" }, [_vm._v("Home Splash Page")])
-      ])
+  return _c("div", { staticClass: "hero is-primary" }, [
+    _c("div", { staticClass: "hero-body" }, [
+      _c("h1", { staticClass: "title is-1" }, [_vm._v("Home Splash Page")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "button", attrs: { switchView: _vm.homeSplash } },
+        [_vm._v("More info")]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -13765,9 +13753,7 @@ component.options.__file = "src/components/home/HomeInfo.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeInfo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/home/HomeInfo.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
