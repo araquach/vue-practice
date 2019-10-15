@@ -2,11 +2,9 @@ package main
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 	"html/template"
 	"log"
 	"net/http"
-	"os"
 )
 
 var tplIndex *template.Template
@@ -18,20 +16,10 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func init() {
-	// loads values from .env into the system
-	if err := godotenv.Load(); err != nil {
-		log.Print("No .env file found")
-	}
-}
-
 func main() {
 	var err error
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
+	port := "8040"
 
 	tplIndex = template.Must(template.ParseFiles(
 		"views/main.gohtml"))
