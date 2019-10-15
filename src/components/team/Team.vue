@@ -6,12 +6,12 @@
 
 <script>
     import TeamSplash from './TeamSplash.vue'
-    import TeamInfo from './TeamInfo.vue'
+    import TeamMembers from './TeamIMembers.vue'
 
     export default {
         components: {
             TeamSplash,
-            TeamInfo
+            TeamMembers
         },
 
         data() {
@@ -22,10 +22,10 @@
 
         methods: {
             switchView() {
-                if (this.selectedView == 'team-info') {
+                if (this.selectedView == 'team-members') {
                     this.selectedView = 'team-splash'
                 } else {
-                    this.selectedView = 'team-info'
+                    this.selectedView = 'team-members'
                 }
             }
         }
