@@ -1,6 +1,6 @@
 <template>
     <div>
-        <component :is="selectedTeam"/>
+        <component :is="selectedView" @switchView="switchView"/>
     </div>
 </template>
 
@@ -9,14 +9,25 @@
     import TeamInfo from './TeamInfo.vue'
 
     export default {
+        components: {
+            TeamSplash,
+            TeamInfo
+        },
+
         data() {
             return {
-                selectedTeam: 'team-splash'
+                selectedView: 'team-splash'
             }
         },
-        components: {
-            teamSplash: TeamSplash,
-            teamInfo: TeamInfo
+
+        methods: {
+            switchView() {
+                if (this.selectedView == 'team-info') {
+                    this.selectedView = 'team-splash'
+                } else {
+                    this.selectedView = 'team-info'
+                }
+            }
         }
     }
 

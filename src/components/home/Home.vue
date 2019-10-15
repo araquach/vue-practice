@@ -1,6 +1,6 @@
 <template>
-    <div @click="switchView">
-        <component :is="selectedHome"/>
+    <div>
+        <component :is="selectedView" @switchView="switchView"/>
     </div>
 </template>
 
@@ -9,21 +9,25 @@
     import HomeInfo from './HomeInfo.vue'
 
     export default {
+        components: {
+            HomeSplash,
+            HomeInfo
+        },
+
         data() {
             return {
-                selectedHome: 'home-splash'
+                selectedView: 'home-splash'
             }
         },
 
         methods: {
             switchView() {
-                this.selectedHome = 'home-info'
+                if (this.selectedView == 'home-info') {
+                    this.selectedView = 'home-splash'
+                } else {
+                    this.selectedView = 'home-info'
+                }
             }
-        },
-
-        components: {
-            homeSplash: HomeSplash,
-            homeInfo: HomeInfo
         }
     }
 

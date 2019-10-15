@@ -1,6 +1,6 @@
 <template>
     <div>
-        <component :is="selectedAbout"/>
+        <component :is="selectedView" @switchView="switchView"/>
     </div>
 </template>
 
@@ -9,15 +9,25 @@
     import AboutInfo from './AboutInfo.vue'
 
     export default {
+        components: {
+            AboutSplash,
+            AboutInfo
+        },
+
         data() {
             return {
-                selectedAbout: 'about-splash'
+                selectedView: 'about-splash'
             }
         },
-        components: {
-            aboutSplash: AboutSplash,
-            aboutInfo: AboutInfo
+
+        methods: {
+            switchView() {
+                if (this.selectedView == 'about-info') {
+                    this.selectedView = 'about-splash'
+                } else {
+                    this.selectedView = 'about-info'
+                }
+            }
         }
     }
-
 </script>

@@ -1,4 +1,4 @@
-<template>
+r<template>
     <div class="section box">
         <h1 class="title" v-text="theCardTitle"></h1>
         <button @click="sendMessage" class="button is-primary">Send Child A Message</button>

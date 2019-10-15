@@ -2,38 +2,34 @@
     <div class="hero is-danger">
         <div class="hero-body">
             <h1 class="title is-1">Team Members</h1>
-            <ul>
-                <li v-for="(tm, index) in teamMembers" class="box">
-                    {{index + 1}}. {{tm.firstName}} {{tm.lastName}}
-                    <br>
-                    Age: {{tm.age}}
-                </li>
-            </ul>
+            <div v-for="(tm, index) in teamMembers">
+                <p>{{firstName}}</p>
+                <p>{{lastName}}</p>
+            </div>
+            <button @click="switchView" class="button">Switch back</button>
         </div>
     </div>
 </template>
 
 <script>
+    import TeamInd from "./TeamInd"
+
     export default {
+        components: {TeamInd},
+
         data() {
-            return {
+            return  {
                 teamMembers: [
-                    {
-                        firstName: "Adam",
-                        lastName: "Carter",
-                        age: "43"
-                    },
-                    {
-                        firstName: "Jimmi",
-                        lastName: "Sharpe",
-                        age: "30"
-                    },
-                    {
-                        firstName: "Izzy",
-                        lastName: "Lamb",
-                        age: "31"
-                    },
-                ]
+                    {firstName: "Adam", lastName: "Carter"},
+                    {firstName: "Jimmy", lastName: "Sharpe"},
+                    {firstName: "Izzy", lastName: "Lamb"}
+                ],
+            }
+        },
+
+        methods: {
+            switchView() {
+                this.$emit('switchView')
             }
         }
     }
