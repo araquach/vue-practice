@@ -1,21 +1,26 @@
 <template>
-    <div class="box" @click="moreInfo = true">
-        <p>Name: {{firstName}} {{latName}}</p>
-
-        <div v-if="moreInfo">
-            <p class="is-size-2">Age: {{age}}</p>
-            <p @click="moreInfo = false" class="is-primary">Hide</p>
+    <div>
+        <div class="box">
+            <p>Name: {{firstName}} {{lastName}}</p>
+            <p>Age: {{age}}</p>
         </div>
+        <team-detail>
+            <h1 class="title has-text-primary">{{firstName}} {{lastName}}</h1>
+            <p>{{age}}</p>
+        </team-detail>
     </div>
 </template>
 
 <script>
+    import TeamDetail from "./TeamDetail"
     export default {
-        props: ['firstName', 'latName', 'age'],
+        components: {TeamDetail},
+
+        props: ['firstName', 'lastName', 'age'],
 
         data() {
             return {
-                moreInfo: false
+
             }
         }
     }

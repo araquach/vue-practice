@@ -7,6 +7,7 @@
                     :firstName=tm.firstName
                     :lastName=tm.lastName
                     :age=tm.age
+                    :key="index"
             />
         </div>
     </div>

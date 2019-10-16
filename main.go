@@ -19,7 +19,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 func main() {
 	var err error
 
-	port := "8040"
+	port := "8050"
 
 	tplIndex = template.Must(template.ParseFiles(
 		"views/main.gohtml"))
