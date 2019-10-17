@@ -1,5 +1,5 @@
 <template>
-    <div @click="showModal">
+    `<div @click="showModal">
         <div class="box">
             <p>Name: {{firstName}} {{lastName}}</p>
             <p>Age: {{age}}</p>
@@ -14,7 +14,7 @@
                 <button class="modal-close is-large" aria-label="close" @click.stop="hideModal"></button>
             </div>
         </div>
-    </div>
+    </div>`
 </template>
 
 <script>

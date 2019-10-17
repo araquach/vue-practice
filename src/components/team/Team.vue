@@ -6,7 +6,7 @@
 
 <script>
     import TeamSplash from './TeamSplash.vue'
-    import TeamMembers from './TeamMembers.vue'
+    import TeamMembers from './TeamIMembers.vue'
 
     export default {
         components: {

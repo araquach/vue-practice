@@ -1,17 +1,20 @@
 <template>
-    <div class="hero is-danger">
-        <div class="hero-body">
-            <h1 class="title is-1">Team Splash Page</h1>
-            <button @click="switchView" class="button">More info</button>
+    <section id="team" class="team hero is-fullheight is-dark">
+        <div class="hero-body show columns">
+            <div class="section column is-5">
+                <h1 class="title">Meet the Base Team</h1>
+                <h2 class="subtitle">from Junior Stylists through to experienced graduates</h2>
+                <button @click="switchComponent" class="button">More info</button>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
     export default {
         methods: {
             switchView() {
-                this.$emit('switchView')
+                this.$emit('switchComponent')
             }
         }
     }
