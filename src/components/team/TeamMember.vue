@@ -1,26 +1,39 @@
 <template>
-    <div>
+    <div @click="showModal">
         <div class="box">
             <p>Name: {{firstName}} {{lastName}}</p>
             <p>Age: {{age}}</p>
         </div>
-        <team-detail>
-            <h1 class="title has-text-primary">{{firstName}} {{lastName}}</h1>
-            <p>{{age}}</p>
-        </team-detail>
+        <div>
+            <div v-if="isActive" class="modal is-active">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <p>Name: {{firstName}}</p>
+                    <p>Age: {{age}}</p>
+                </div>
+                <button class="modal-close is-large" aria-label="close" @click.stop="hideModal"></button>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-    import TeamDetail from "./TeamDetail"
     export default {
-        components: {TeamDetail},
-
         props: ['firstName', 'lastName', 'age'],
 
         data() {
             return {
+                isActive: false
+            }
+        },
 
+        methods: {
+            showModal() {
+                this.isActive = true
+            },
+
+            hideModal() {
+                this.isActive = false
             }
         }
     }
