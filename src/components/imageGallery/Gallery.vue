@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import ImageList from './ImegeList'
+    import ImageList from './ImageList'
 
     export default {
         name: "gallery",
