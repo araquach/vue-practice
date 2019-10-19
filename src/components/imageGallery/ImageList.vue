@@ -1,31 +1,18 @@
 <template>
-    <div>
-        <single-image :selectedImage="selectedImage" />
-
-        <div v-for="image in images" :key="image.id">
-            <a href="#" @click="showImage(image)">
-                <img :src="image.thumbnail"/>
-            </a>
-        </div>
+    <div v-for="image in images" :key="image.id">
+        <a href="#" @click="emitImage(image)">
+            <img :src="image.thumbnail"/>
+        </a>
     </div>
 </template>
 
 <script>
-    import SingleImage from './SingleImage'
-
     export default {
         props: ['images'],
-        components: {SingleImage},
-
-        data() {
-            return {
-                selectedImage: ''
-            }
-        },
 
         methods: {
-            showImage(image) {
-                this.selectedImage = image
+            emitImage(image) {
+                this.$emit('emitImage',image)
             }
         }
     }

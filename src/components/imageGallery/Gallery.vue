@@ -1,15 +1,20 @@
 <template>
     <div>
-        <image-list :images="images"/>
+        <single-image :selectedImage="selectedImage"/>
+        <image-list :images="images" @emitImage="showImage"/>
     </div>
 </template>
 
 <script>
     import ImageList from './ImageList'
+    import SingleImage from "./SingleImage"
 
     export default {
         name: "gallery",
-        components: {ImageList},
+        components: {
+            ImageList,
+            SingleImage
+        },
 
         data() {
             return {
@@ -21,8 +26,15 @@
                     {id: 5, title: 'fifth Image', description: 'Fifth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img5.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img5.jpg'},
                     {id: 6, title: 'Sixth Image', description: 'Sixth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img6.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img6.jpg'},
                     {id: 7, title: 'Seventh Image', description: 'Seventh Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img7.jpg,', imageLink: 'https://vuejsbook.com/img/vuejs/img7.jpg'},
-                    {id: 8, title: 'Eighth Image', description: 'Eighth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img8.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img8.jpg'}
-                ]
+                    {id: 8, title: 'Eighth Image', description: 'Eighth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img8.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img8.jpg'},
+                ],
+                selectedImage: ''
+            }
+        },
+
+        methods: {
+            showImage(image) {
+                this.selectedImage = image
             }
         }
     }

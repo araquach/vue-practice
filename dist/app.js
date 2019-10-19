@@ -317,6 +317,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ImageList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ImageList */ "./src/components/imageGallery/ImageList.vue");
+/* harmony import */ var _SingleImage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SingleImage */ "./src/components/imageGallery/SingleImage.vue");
+//
 //
 //
 //
@@ -324,10 +326,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "gallery",
   components: {
-    ImageList: _ImageList__WEBPACK_IMPORTED_MODULE_0__["default"]
+    ImageList: _ImageList__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SingleImage: _SingleImage__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -379,8 +383,14 @@ __webpack_require__.r(__webpack_exports__);
         description: 'Eighth Image Description',
         thumbnail: 'https://vuejsbook.com/img/vuejs/img8.jpg',
         imageLink: 'https://vuejsbook.com/img/vuejs/img8.jpg'
-      }]
+      }],
+      selectedImage: ''
     };
+  },
+  methods: {
+    showImage: function showImage(image) {
+      this.selectedImage = image;
+    }
   }
 });
 
@@ -395,7 +405,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SingleImage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SingleImage */ "./src/components/imageGallery/SingleImage.vue");
 //
 //
 //
@@ -404,24 +413,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['images'],
-  components: {
-    SingleImage: _SingleImage__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      selectedImage: ''
-    };
-  },
   methods: {
-    showImage: function showImage(image) {
-      this.selectedImage = image;
+    emitImage: function emitImage(image) {
+      this.$emit('emitImage', image);
     }
   }
 });
@@ -1981,7 +1977,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("image-list", { attrs: { images: _vm.images } })], 1)
+  return _c(
+    "div",
+    [
+      _c("single-image", { attrs: { selectedImage: _vm.selectedImage } }),
+      _vm._v(" "),
+      _c("image-list", {
+        attrs: { images: _vm.images },
+        on: { emitImage: _vm.showImage }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2001,37 +2008,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("single-image", { attrs: { selectedImage: _vm.selectedImage } }),
-      _vm._v(" "),
-      _vm._l(_vm.images, function(image) {
-        return _c("div", { key: image.id }, [
-          _c(
-            "a",
-            {
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.showImage(image)
-                }
-              }
-            },
-            [_c("img", { attrs: { src: image.thumbnail } })]
-          )
-        ])
-      })
-    ],
-    2
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
