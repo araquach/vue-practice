@@ -1,8 +1,10 @@
 <template>
-    <div v-for="image in images" :key="image.id">
-        <a href="#" @click="emitImage(image)">
-            <img :src="image.thumbnail"/>
-        </a>
+    <div>
+        <div v-for="image in images" :key="image.id">
+            <a href="#" @click="emitImage(image)">
+                <img :src="image.thumbnail"/>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -12,7 +14,7 @@
 
         methods: {
             emitImage(image) {
-                this.$emit('emitImage',image)
+                this.$emit('emitImage', image)
             }
         }
     }

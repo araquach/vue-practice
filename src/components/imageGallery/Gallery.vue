@@ -7,17 +7,15 @@
 
 <script>
     import ImageList from './ImageList'
-    import SingleImage from "./SingleImage"
+    import SingleImage from './SingleImage'
 
     export default {
-        name: "gallery",
-        components: {
-            ImageList,
-            SingleImage
-        },
+        name: 'gallery',
+        components: {SingleImage, ImageList},
 
         data() {
             return {
+                selectedImage: '',
                 images: [
                     {id: 1, title: 'First Image', description: 'First Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img1.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img1.jpg'},
                     {id: 2, title: 'Second Image', description: 'Second Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img2.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img2.jpg'},
@@ -27,8 +25,7 @@
                     {id: 6, title: 'Sixth Image', description: 'Sixth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img6.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img6.jpg'},
                     {id: 7, title: 'Seventh Image', description: 'Seventh Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img7.jpg,', imageLink: 'https://vuejsbook.com/img/vuejs/img7.jpg'},
                     {id: 8, title: 'Eighth Image', description: 'Eighth Image Description', thumbnail: 'https://vuejsbook.com/img/vuejs/img8.jpg', imageLink: 'https://vuejsbook.com/img/vuejs/img8.jpg'},
-                ],
-                selectedImage: ''
+                ]
             }
         },
 
@@ -39,7 +36,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
