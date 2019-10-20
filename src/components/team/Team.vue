@@ -1,7 +1,7 @@
 <template>
     <div class="hero is-danger">
         <div class="hero-body">
-            <TeamDetail :selectedTM="selectedTM"/>
+            <TeamDetail class="modal" :selectedTM="selectedTM"/>
             <TeamList :TeamMembers="TeamMembers" @emitTM="showTM"/>
         </div>
     </div>
@@ -22,7 +22,7 @@
                         Id: 1,
                         FirstName: "Lucy",
                         LastName:"Watson",
-                        Image: "/dist/img/team/lucy.jpg",
+                        Image: "/dist/images/lucy.jpg",
                         Level:"Junior Stylist",
                         Para1:"Lucy is a great stylist",
                         Para2:"She's in her second year",
@@ -34,7 +34,7 @@
                     {
                         FirstName: "Lauren",
                         Id: 2,
-                        Image: "/dist/img/team/lauren_w.jpg",
+                        Image: "/dist/images/lauren_w.jpg",
                         LastName: "Watson",
                         Level: "Junior Stylist",
                         Para1: "Lauren is an asset to the team ",
@@ -43,12 +43,11 @@
                         Price: "50",
                         Product: "Dust It",
                         Style: "Long, textured looks"
-
                     },
                     {
                         FirstName: "David",
                         Id: 3,
-                        Image: "/dist/img/team/david.jpg",
+                        Image: "/dist/images/david.jpg",
                         LastName: "Randles",
                         Level: "Graduate",
                         Para1: "David is the latest addition to the team",
@@ -57,6 +56,32 @@
                         Price: "60",
                         Product: "Oil Miracle",
                         Style: "Short, choppy looks"
+                    },
+                    {
+                        FirstName: "Abi",
+                        Id: 4,
+                        Image: "/dist/images/abi.jpg",
+                        LastName: "Clarke",
+                        Level: "Graduate",
+                        Para1: "Abi is with us from PK",
+                        Para2: "She's a memnber of the GHD style squad",
+                        Para3: "She will be back to PK soon",
+                        Price: "90",
+                        Product: "Smooth Again",
+                        Style: "Luscious waves"
+                    },
+                    {
+                        FirstName: "Lauren",
+                        Id: 5,
+                        Image: "/dist/images/lauren_t.jpg",
+                        LastName: "Thompson",
+                        Level: "Graduate",
+                        Para1: "Lauren is temporarily with us from Jakata",
+                        Para2: "She made the wise choice of coming to us after being at Johnsons",
+                        Para3: "She's a great asset to the team",
+                        Price: "60",
+                        Product: "Flex Wax",
+                        Style: "Short, bold styles"
                     }
                 ]
             }

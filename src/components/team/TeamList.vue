@@ -1,5 +1,5 @@
 <template>
-    <div class="columns">
+    <div class="columns is-multiline">
         <div v-for="tm in TeamMembers" :key="tm.id" class="section column is-4">
             <div @click="emitTM(tm)" class="card">
                 <div class="card-image">
@@ -10,10 +10,12 @@
                 <div class="card-content">
                     <div class="media">
                         <div class="media-content">
-                            <h1 class="title">{{tm.FirstName}} {{tm.LastName}}</h1>
+                            <h1 class="title has-text-primary">{{tm.FirstName}} {{tm.LastName}}</h1>
                             <p>{{tm.Para1}}</p>
                             <p>{{tm.Para2}}</p>
                             <p>{{tm.Para3}}</p>
+                            <p>{{tm.Level}}</p>
+                            <p>&pound;{{tm.Price}}</p>
                         </div>
                     </div>
                 </div>

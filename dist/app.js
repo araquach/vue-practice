@@ -343,7 +343,7 @@ __webpack_require__.r(__webpack_exports__);
         Id: 1,
         FirstName: "Lucy",
         LastName: "Watson",
-        Image: "/dist/img/team/lucy.jpg",
+        Image: "/dist/images/lucy.jpg",
         Level: "Junior Stylist",
         Para1: "Lucy is a great stylist",
         Para2: "She's in her second year",
@@ -354,7 +354,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         FirstName: "Lauren",
         Id: 2,
-        Image: "/dist/img/team/lauren_w.jpg",
+        Image: "/dist/images/lauren_w.jpg",
         LastName: "Watson",
         Level: "Junior Stylist",
         Para1: "Lauren is an asset to the team ",
@@ -366,7 +366,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         FirstName: "David",
         Id: 3,
-        Image: "/dist/img/team/david.jpg",
+        Image: "/dist/images/david.jpg",
         LastName: "Randles",
         Level: "Graduate",
         Para1: "David is the latest addition to the team",
@@ -375,6 +375,30 @@ __webpack_require__.r(__webpack_exports__);
         Price: "60",
         Product: "Oil Miracle",
         Style: "Short, choppy looks"
+      }, {
+        FirstName: "Abi",
+        Id: 4,
+        Image: "/dist/images/abi.jpg",
+        LastName: "Clarke",
+        Level: "Graduate",
+        Para1: "Abi is with us from PK",
+        Para2: "She's a memnber of the GHD style squad",
+        Para3: "She will be back to PK soon",
+        Price: "90",
+        Product: "Smooth Again",
+        Style: "Luscious waves"
+      }, {
+        FirstName: "Lauren",
+        Id: 5,
+        Image: "/dist/images/lauren_t.jpg",
+        LastName: "Thompson",
+        Level: "Graduate",
+        Para1: "Lauren is temporarily with us from Jakata",
+        Para2: "She made the wise choice of coming to us after being at Johnsons",
+        Para3: "She's a great asset to the team",
+        Price: "60",
+        Product: "Flex Wax",
+        Style: "Short, bold styles"
       }]
     };
   },
@@ -420,6 +444,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -1175,7 +1201,10 @@ var render = function() {
       "div",
       { staticClass: "hero-body" },
       [
-        _c("TeamDetail", { attrs: { selectedTM: _vm.selectedTM } }),
+        _c("TeamDetail", {
+          staticClass: "modal",
+          attrs: { selectedTM: _vm.selectedTM }
+        }),
         _vm._v(" "),
         _c("TeamList", {
           attrs: { TeamMembers: _vm.TeamMembers },
@@ -1246,7 +1275,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "columns" },
+    { staticClass: "columns is-multiline" },
     _vm._l(_vm.TeamMembers, function(tm) {
       return _c("div", { key: tm.id, staticClass: "section column is-4" }, [
         _c(
@@ -1269,7 +1298,7 @@ var render = function() {
             _c("div", { staticClass: "card-content" }, [
               _c("div", { staticClass: "media" }, [
                 _c("div", { staticClass: "media-content" }, [
-                  _c("h1", { staticClass: "title" }, [
+                  _c("h1", { staticClass: "title has-text-primary" }, [
                     _vm._v(_vm._s(tm.FirstName) + " " + _vm._s(tm.LastName))
                   ]),
                   _vm._v(" "),
@@ -1277,7 +1306,11 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [_vm._v(_vm._s(tm.Para2))]),
                   _vm._v(" "),
-                  _c("p", [_vm._v(_vm._s(tm.Para3))])
+                  _c("p", [_vm._v(_vm._s(tm.Para3))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(tm.Level))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("£" + _vm._s(tm.Price))])
                 ])
               ])
             ])
