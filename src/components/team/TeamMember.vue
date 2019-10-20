@@ -1,15 +1,15 @@
 <template>
     <div @click="showModal">
         <div class="box">
-            <p>Name: {{firstName}} {{lastName}}</p>
-            <p>Age: {{age}}</p>
+            <p>Name: {{tm.firstName}} {{tm.lastName}}</p>
+            <p>Age: {{tm.Age}}</p>
         </div>
         <div>
             <div v-if="isActive" class="modal is-active">
                 <div class="modal-background"></div>
                 <div class="modal-content">
-                    <p>Name: {{firstName}}</p>
-                    <p>Age: {{age}}</p>
+                    <p>Name: {{tm.firstName}}</p>
+                    <p>Age: {{tm.age}}</p>
                 </div>
                 <button class="modal-close is-large" aria-label="close" @click.stop="hideModal"></button>
             </div>
@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        props: ['firstName', 'lastName', 'age'],
+        props: ['tm'],
 
         data() {
             return {

@@ -22,10 +22,10 @@
 
         methods: {
             switchView() {
-                if (this.selectedView == 'team-members') {
-                    this.selectedView = 'team-splash'
+                if (this.selectedView == 'TeamMembers') {
+                    this.selectedView = 'TeamSplash'
                 } else {
-                    this.selectedView = 'team-members'
+                    this.selectedView = 'TeamMembers'
                 }
             }
         }
