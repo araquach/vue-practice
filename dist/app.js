@@ -434,6 +434,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['TeamMembers'],
   methods: {
@@ -1200,7 +1210,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", [
-      _c("h1", [
+      _c("h1", { staticClass: "title" }, [
         _vm._v(
           _vm._s(_vm.selectedTM.FirstName) +
             " " +
@@ -1236,12 +1246,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "columns" },
     _vm._l(_vm.TeamMembers, function(tm) {
-      return _c("div", { key: tm.id }, [
+      return _c("div", { key: tm.id, staticClass: "section column is-4" }, [
         _c(
-          "a",
+          "div",
           {
-            attrs: { href: "#" },
+            staticClass: "card",
             on: {
               click: function($event) {
                 return _vm.emitTM(tm)
@@ -1249,17 +1260,27 @@ var render = function() {
             }
           },
           [
-            _c("h1", { staticClass: "title" }, [
-              _vm._v(_vm._s(tm.FirstName) + " " + _vm._s(tm.LastName))
+            _c("div", { staticClass: "card-image" }, [
+              _c("figure", { staticClass: "image" }, [
+                _c("img", { attrs: { src: tm.Image, alt: tm.FirstName } })
+              ])
             ]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(tm.Para1))]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(tm.Para2))]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(tm.Para3))]),
-            _vm._v(" "),
-            _c("img", { attrs: { src: tm.Image } })
+            _c("div", { staticClass: "card-content" }, [
+              _c("div", { staticClass: "media" }, [
+                _c("div", { staticClass: "media-content" }, [
+                  _c("h1", { staticClass: "title" }, [
+                    _vm._v(_vm._s(tm.FirstName) + " " + _vm._s(tm.LastName))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(tm.Para1))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(tm.Para2))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(tm.Para3))])
+                ])
+              ])
+            ])
           ]
         )
       ])
