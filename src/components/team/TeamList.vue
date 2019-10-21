@@ -11,11 +11,6 @@
                     <div class="media">
                         <div class="media-content">
                             <h1 class="title has-text-primary">{{tm.FirstName}} {{tm.LastName}}</h1>
-                            <p>{{tm.Para1}}</p>
-                            <p>{{tm.Para2}}</p>
-                            <p>{{tm.Para3}}</p>
-                            <p>{{tm.Level}}</p>
-                            <p>&pound;{{tm.Price}}</p>
                         </div>
                     </div>
                 </div>

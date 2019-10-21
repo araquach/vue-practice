@@ -1,8 +1,23 @@
 <template>
-    <div>
-        <div>
-            <h1 class="title">{{selectedTM.FirstName}} {{selectedTM.LastName}}</h1>
-            <p>{{selectedTM.Para1}}</p>
+    <div class="card">
+        <div class="card-content columns">
+            <div class="column">
+                <figure class="image">
+                    <img :src="selectedTM.Image" :alt="selectedTM.FirstName">
+                </figure>
+            </div>
+            <div class="column">
+                <div class="media">
+                    <div class="media-content">
+                        <h1 class="title has-text-primary">{{selectedTM.FirstName}} {{selectedTM.LastName}}</h1>
+                        <p>{{selectedTM.Para1}}</p>
+                        <p>{{selectedTM.Para2}}</p>
+                        <p>{{selectedTM.Para3}}</p>
+                        <p>{{selectedTM.Level}}</p>
+                        <p>&pound;{{selectedTM.Price}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
