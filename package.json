@@ -1,7 +1,7 @@
 {
   "name": "vue-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Vue experimentation app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.7.5",
+    "buefy": "^0.8.5",
+    "bulma": "^0.8.0",
     "cross-env": "^6.0.3",
     "laravel-mix": "^5.0.0",
     "resolve-url-loader": "^3.1.0",
@@ -24,5 +25,6 @@
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "dependencies": {}
 }

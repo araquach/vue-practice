@@ -1,6 +1,6 @@
 <template>
     <div class="columns is-multiline">
-        <div v-for="tm in TeamMembers" :key="tm.id" class="section column is-4">
+        <div v-for="tm in TeamMembers" :key="tm.id" class="section column is-3">
             <div @click="emitTM(tm)" class="card">
                 <div class="card-image">
                     <figure class="image">

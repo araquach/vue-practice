@@ -1,7 +1,7 @@
 <template>
     <div class="hero is-danger">
         <div class="hero-body">
-            <TeamDetail class="modal" :selectedTM="selectedTM"/>
+            <TeamDetail :selectedTM="selectedTM"/>
             <TeamList :TeamMembers="TeamMembers" @emitTM="showTM"/>
         </div>
     </div>
