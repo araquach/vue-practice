@@ -8,17 +8,19 @@
                 Launch image modal
             </button>
             <button @click="switchView" class="button">Go Back</button>
-            <AboutModal :isImageModalActive="isImageModalActive"/>
         </div>
+        <section>
+            <b-modal :active.sync="isImageModalActive">
+                <p class="image is-4by3">
+                    <img src="/static/images/lauren_w.jpg">
+                </p>
+            </b-modal>
+        </section>
     </div>
 </template>
 
 <script>
-    import AboutModal from "./AboutModal"
-
     export default {
-        components: {AboutModal},
-
         data() {
             return {
                 isImageModalActive: false
