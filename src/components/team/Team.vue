@@ -1,7 +1,9 @@
 <template>
     <div class="hero is-danger">
         <div class="hero-body">
-            <TeamDetail :selectedTM="selectedTM"/>
+            <b-modal :active.sync="isComponentModalActive">
+                <TeamDetail :selectedTM="selectedTM"/>
+            </b-modal>
             <TeamList :TeamMembers="TeamMembers" @emitTM="showTM"/>
         </div>
     </div>
@@ -17,6 +19,7 @@
         data() {
             return {
                 selectedTM: '',
+                isComponentModalActive: false,
                 TeamMembers: [
                     {
                         Id: 1,
@@ -89,7 +92,7 @@
 
         methods: {
             showTM(tm) {
-                this.selectedTM = tm
+                this.selectedTM = tm, this.isComponentModalActive = true
             }
         }
     }

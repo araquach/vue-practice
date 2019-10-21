@@ -514,6 +514,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -524,6 +526,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       selectedTM: '',
+      isComponentModalActive: false,
       TeamMembers: [{
         Id: 1,
         FirstName: "Lucy",
@@ -589,7 +592,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showTM: function showTM(tm) {
-      this.selectedTM = tm;
+      this.selectedTM = tm, this.isComponentModalActive = true;
     }
   }
 });
@@ -14863,7 +14866,19 @@ var render = function() {
       "div",
       { staticClass: "hero-body" },
       [
-        _c("TeamDetail", { attrs: { selectedTM: _vm.selectedTM } }),
+        _c(
+          "b-modal",
+          {
+            attrs: { active: _vm.isComponentModalActive },
+            on: {
+              "update:active": function($event) {
+                _vm.isComponentModalActive = $event
+              }
+            }
+          },
+          [_c("TeamDetail", { attrs: { selectedTM: _vm.selectedTM } })],
+          1
+        ),
         _vm._v(" "),
         _c("TeamList", {
           attrs: { TeamMembers: _vm.TeamMembers },
@@ -27833,15 +27848,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./src/components/people/Person.vue ***!
   \******************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Person_vue_vue_type_template_id_632e4895___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Person.vue?vue&type=template&id=632e4895& */ "./src/components/people/Person.vue?vue&type=template&id=632e4895&");
 /* harmony import */ var _Person_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Person.vue?vue&type=script&lang=js& */ "./src/components/people/Person.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Person_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Person_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -27871,7 +27885,7 @@ component.options.__file = "src/components/people/Person.vue"
 /*!*******************************************************************!*\
   !*** ./src/components/people/Person.vue?vue&type=script&lang=js& ***!
   \*******************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28113,8 +28127,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
+__webpack_require__(/*! /Users/adam-macbook/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /Users/adam-macbook/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
 
 
 /***/ })
