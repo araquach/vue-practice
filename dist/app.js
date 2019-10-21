@@ -155,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isComponentModalActive: false,
       formProps: {
-        email: 'evan@you.com',
-        password: 'testing'
+        email: 'araquach@yahoo.co.uk',
+        password: 'wowsers'
       }
     };
   }
