@@ -10,11 +10,11 @@
                 <div class="media">
                     <div class="media-content">
                         <h1 class="title has-text-primary">{{selectedTM.FirstName}} {{selectedTM.LastName}}</h1>
+                        <h2 class="subtitle has-text-primary">{{selectedTM.Level}}</h2>
                         <p>{{selectedTM.Para1}}</p>
                         <p>{{selectedTM.Para2}}</p>
                         <p>{{selectedTM.Para3}}</p>
-                        <p>{{selectedTM.Level}}</p>
-                        <p>&pound;{{selectedTM.Price}}</p>
+                        <p>Average Price: &pound;{{selectedTM.Price}}</p>
                     </div>
                 </div>
             </div>

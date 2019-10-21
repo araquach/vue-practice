@@ -668,6 +668,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['TeamMembers'],
   methods: {
@@ -14942,15 +14943,17 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c("h2", { staticClass: "subtitle has-text-primary" }, [
+              _vm._v(_vm._s(_vm.selectedTM.Level))
+            ]),
+            _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.selectedTM.Para1))]),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.selectedTM.Para2))]),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.selectedTM.Para3))]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.selectedTM.Level))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("£" + _vm._s(_vm.selectedTM.Price))])
+            _c("p", [_vm._v("Average Price: £" + _vm._s(_vm.selectedTM.Price))])
           ])
         ])
       ])
@@ -15006,6 +15009,10 @@ var render = function() {
                 _c("div", { staticClass: "media-content" }, [
                   _c("h1", { staticClass: "title has-text-primary" }, [
                     _vm._v(_vm._s(tm.FirstName) + " " + _vm._s(tm.LastName))
+                  ]),
+                  _vm._v(" "),
+                  _c("h2", { staticClass: "subtitle has-text-primary" }, [
+                    _vm._v(_vm._s(tm.Level))
                   ])
                 ])
               ])

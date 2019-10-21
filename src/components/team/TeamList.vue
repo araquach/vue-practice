@@ -11,6 +11,7 @@
                     <div class="media">
                         <div class="media-content">
                             <h1 class="title has-text-primary">{{tm.FirstName}} {{tm.LastName}}</h1>
+                            <h2 class="subtitle has-text-primary">{{tm.Level}}</h2>
                         </div>
                     </div>
                 </div>
