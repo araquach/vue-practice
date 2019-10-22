@@ -1,0 +1,33 @@
+<template>
+    <div class="columns is-multiline">
+        <div v-for="tm in TeamMembers" :key="tm.id" class="section column is-3">
+            <div @click="emitTM(tm)" class="card">
+                <div class="card-image">
+                    <figure class="image">
+                        <img :src="tm.Image" :alt="tm.FirstName">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <h1 class="title has-text-primary">{{tm.FirstName}} {{tm.LastName}}</h1>
+                            <h2 class="subtitle has-text-primary">{{tm.Level}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ['TeamMembers'],
+
+        methods: {
+            emitTM(tm) {
+                this.$emit('emitTM', tm)
+            }
+        }
+    }
+</script>
