@@ -4,7 +4,6 @@
         <about-component/>
         <team-component/>
         <ComponantModal/>
-        <People/>
     </div>
 </template>
 
