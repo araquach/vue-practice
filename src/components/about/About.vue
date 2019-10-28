@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="about" class="js-scroll-to-about">
         <component :is="selectedView" @switchView="switchView"/>
     </div>
 </template>

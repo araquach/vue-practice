@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="home">
         <component :is="selectedView" @switchView="switchView"/>
     </div>
 </template>
