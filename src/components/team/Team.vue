@@ -1,5 +1,5 @@
 <template>
-    <div class="hero is-danger">
+    <div id="team" class="hero is-danger">
         <div class="hero-body">
             <b-modal :active.sync="isComponentModalActive">
                 <TeamDetail :selectedTM="selectedTM"/>
