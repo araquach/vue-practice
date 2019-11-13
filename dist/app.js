@@ -137,6 +137,11 @@ __webpack_require__.r(__webpack_exports__);
       id: this.$route.params.id
     };
   },
+  watch: {
+    '$route': function $route(to, from) {
+      this.id = to.params.id;
+    }
+  },
   methods: {
     navigateToHome: function navigateToHome() {
       this.$router.push('/');
