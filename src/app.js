@@ -1,23 +1,16 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
-import Home from './components/home/Home'
-import About from './components/about/About'
-import Team from './components/team/Team'
+import { routes } from "./routes"
 
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+Vue.use(VueRouter)
 
-window.axios = require('axios');
-// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-Vue.use(Buefy)
-
-Vue.component('home-component', Home)
-Vue.component('about-component', About)
-Vue.component('team-component', Team)
-
+const router = new VueRouter({
+    routes
+})
 
 new Vue({
     el: '#app',
+    router,
     render: h => h(App)
 })

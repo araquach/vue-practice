@@ -1,23 +1,13 @@
 <template>
-    <div>
-        <home-component/>
-        <about-component/>
-        <team-component/>
-        <ComponantModal/>
+    <div class="container">
+        <h1 class="title">Routing</h1>
+        <hr>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import People from "./components/people/People"
-    import ComponantModal from "./components/ComponantModal/ComponantModal"
-
     export default {
-        components: {People, ComponantModal},
-        data() {
-            return {
-
-            }
-        }
 
     }
 </script>
