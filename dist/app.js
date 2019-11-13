@@ -130,7 +130,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      id: this.$route.params.id
+    };
+  },
   methods: {
     navigateToHome: function navigateToHome() {
       this.$router.push('/');
@@ -683,9 +689,18 @@ var render = function() {
           "router-link",
           {
             staticClass: "button is-danger",
-            attrs: { to: "/user", tag: "li", "active-class": "is-active" }
+            attrs: { to: "/user/1", tag: "li", "active-class": "is-active" }
           },
-          [_vm._v("User")]
+          [_vm._v("User 1")]
+        ),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            staticClass: "button is-danger",
+            attrs: { to: "/user/2", tag: "li", "active-class": "is-active" }
+          },
+          [_vm._v("User 2")]
         )
       ],
       1
@@ -759,6 +774,8 @@ var render = function() {
     _c("h2", { staticClass: "title is-4" }, [_vm._v("The User Page")]),
     _vm._v(" "),
     _c("hr"),
+    _vm._v(" "),
+    _c("p", [_vm._v("Loaded ID: " + _vm._s(_vm.id))]),
     _vm._v(" "),
     _c(
       "button",
@@ -16078,7 +16095,7 @@ var routes = [{
   path: '',
   component: _components_router_Home__WEBPACK_IMPORTED_MODULE_1__["default"]
 }, {
-  path: '/user',
+  path: '/user/:id',
   component: _components_router_user_User__WEBPACK_IMPORTED_MODULE_0__["default"]
 }];
 
