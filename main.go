@@ -104,6 +104,34 @@ func sendMail(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+func apiTeamMembers(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	db := dbConn()
+	t := []TeamMember{}
+	db.Find(&t)
+	db.Close()
+
+	json, err := json.Marshal(t)
+	if err != nil {
+		log.Println(err)
+	}
+	w.Write(json)
+}
+
+func apiServices(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	db := dbConn()
+	s := []Service{}
+	db.Find(&s)
+	db.Close()
+
+	json, err := json.Marshal(s)
+	if err != nil {
+		log.Println(err)
+	}
+	w.Write(json)
+}
+
 func main() {
 	var err error
 
@@ -123,6 +151,8 @@ func main() {
 	r.HandleFunc("/", index).Methods("GET")
 
 	r.HandleFunc("/api/send", sendMail).Methods("POST")
+	r.HandleFunc("/api/team", apiTeamMembers).Methods("GET")
+	r.HandleFunc("/api/services", apiServices).Methods("GET")
 
 	// Assett Handler
 	assetHandler := http.FileServer(http.Dir("./dist/"))
