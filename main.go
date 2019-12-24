@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/joho/godotenv"
 	"html/template"
 	"log"
@@ -14,6 +16,19 @@ import (
 	"github.com/mailgun/mailgun-go/v3"
 )
 
+type TeamMember struct {
+	ID int
+	Name string
+	Level string
+}
+
+type Service struct {
+	Level int
+	CDS	float32
+	C45	float32
+	DS	float32
+}
+
 type ContactMessage struct {
 	Name string
 	Email string
@@ -21,6 +36,24 @@ type ContactMessage struct {
 }
 
 var tplIndex *template.Template
+
+func dbConn() (db *gorm.DB) {
+	dbhost     := "localhost"
+	dbport     := "5432"
+	dbuser     := "postgres"
+	dbpassword := ""
+	dbname     := "vue"
+
+	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
+		"password=%s dbname=%s sslmode=disable",
+		dbhost, dbport, dbuser, dbpassword, dbname)
+
+	db, err := gorm.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+	return db
+}
 
 func init() {
 	// loads values from .env into the system
@@ -75,6 +108,10 @@ func main() {
 	var err error
 
 	port := "8080"
+
+	db := dbConn()
+	db.AutoMigrate(&TeamMember{}, &Service{})
+	db.Close()
 
 	tplIndex = template.Must(template.ParseFiles(
 		"views/main.gohtml"))
