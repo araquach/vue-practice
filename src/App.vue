@@ -1,15 +1,16 @@
 <template>
     <div class="container">
-        <h1 class="title">Routing</h1>
-        <hr>
-        <Header/>
-        <router-view/>
+        <h1 class="title has-text-primary">Price Calculator</h1>
+        <Stylist/>
+        <Prices/>
     </div>
 </template>
 
 <script>
-    import Header from './components/router/Header'
+    import Prices from "./components/prices/Prices"
+    import Stylist from "./components/prices/Stylist"
+
     export default {
-        components: {Header}
+        components: {Prices, Stylist},
     }
 </script>
