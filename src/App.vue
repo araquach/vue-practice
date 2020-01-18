@@ -1,16 +1,21 @@
 <template>
-    <div class="container">
-        <h1 class="title has-text-primary">Price Calculator</h1>
-        <Stylist/>
-        <Prices/>
+    <div>
+        <h1 class="title is-1">Vuex</h1>
+        <Result/>
+        <AnotherResult/>
+        <hr>
+        <Counter/>
+        <AnotherCounter/>
     </div>
 </template>
 
 <script>
-    import Prices from "./components/prices/Prices"
-    import Stylist from "./components/prices/Stylist"
+    import Counter from './components/Counter'
+    import AnotherCounter from "./components/AnotherCounter"
+    import Result from './components/Result'
+    import AnotherResult from "./components/AnotherResult"
 
     export default {
-        components: {Prices, Stylist},
+        components: {AnotherCounter, Counter, Result, AnotherResult }
     }
 </script>

@@ -17,16 +17,16 @@ import (
 )
 
 type TeamMember struct {
-	ID int
-	Name string
-	Level string
+	ID int `json:"id"`
+	Name string `json:"name"`
+	Level int `json:"level"`
 }
 
 type Service struct {
-	Level int
-	CDS	float32
-	C45	float32
-	DS	float32
+	Level int	`json:"level"`
+	CDS	float32 `json:"cds"`
+	C45	float32	`json:"c45"`
+	DS	float32	`json:"ds"`
 }
 
 type ContactMessage struct {
