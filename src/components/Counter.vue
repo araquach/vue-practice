@@ -1,18 +1,17 @@
 <template>
     <div>
-        <button class="button" @click="increment">Increment</button>
-        <button class="button" @click="decrement">Decrement</button>
+        <button class="button" @click="increment(500)">Increment</button>
+        <button class="button" @click="decrement(100)">Decrement</button>
     </div>
 </template>
 <script>
+    import { mapActions } from 'vuex'
     export default {
         methods: {
-            increment() {
-                this.$store.commit('increment')
-            },
-            decrement() {
-                this.$store.commit('decrement')
-            }
+            ...mapActions([
+                'increment',
+                'decrement'
+            ])
         }
     }
 </script>
