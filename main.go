@@ -52,7 +52,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func apiHolidsays(w http.ResponseWriter, r *http.Request) {
+func apiHolidays(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	db := dbConn()
 	holidays := []Holiday{}
@@ -64,6 +64,23 @@ func apiHolidsays(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	w.Write(json)
+}
+
+func apiCreateHoliday (w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
+
+	var data Holiday
+	err := decoder.Decode(&data)
+	if err != nil {
+		panic(err)
+	}
+
+	db := dbConn()
+	db.Create(&data)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return
 }
 
 func main() {
@@ -83,7 +100,8 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", index).Methods("GET")
-	r.HandleFunc("/api/team", apiHolidsays).Methods("GET")
+	r.HandleFunc("/api/holidays", apiHolidays).Methods("GET")
+	r.HandleFunc("/api/holiday", apiCreateHoliday).Methods("POST")
 
 	// Assett Handler
 	assetHandler := http.FileServer(http.Dir("./dist/"))

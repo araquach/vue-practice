@@ -1,5 +1,9 @@
-import Test from './components/Test'
+import HolidayIndex from './components/HolidayIndex'
+import HolidayCreate from './components/HolidayCreate'
+
 
 export const routes = [
-    { path: '', component: Test}
+    { path: '', component: HolidayIndex},
+    { path: '/book', component: HolidayCreate}
+
 ]
