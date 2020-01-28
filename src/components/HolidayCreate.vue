@@ -11,11 +11,6 @@
                              placeholder="Staff">
                     </b-input>
                 </b-field>
-                <b-field label="ID">
-                    <b-numberinput v-model="id"
-                                   placeholder="ID">
-                    </b-numberinput>
-                </b-field>
                 <b-field label="Days">
                     <b-numberinput v-model="days"
                                    placeholder="Days">
@@ -36,9 +31,24 @@
     export default {
         data() {
             return {
-                id: null,
                 staff : null,
                 days: null
+            }
+        },
+
+        methods:{
+            submit() {
+                console.log('submit!')
+                axios.post('/api/holiday', {
+                    staff: this.staff,
+                    days: this.days
+                })
+                    .then(response => {
+                        this.submitStatus = 'OK'
+                    })
+                    .catch((e) => {
+                        console.error(e)
+                    })
             }
         }
     }

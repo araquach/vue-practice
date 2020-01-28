@@ -1905,18 +1905,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      id: null,
       staff: null,
       days: null
     };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      console.log('submit!');
+      axios.post('/api/holiday', {
+        staff: this.staff,
+        days: this.days
+      }).then(function (response) {
+        _this.submitStatus = 'OK';
+      })["catch"](function (e) {
+        console.error(e);
+      });
+    }
   }
 });
 
@@ -16488,24 +16497,6 @@ var render = function() {
                       _vm.staff = $$v
                     },
                     expression: "staff"
-                  }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "b-field",
-              { attrs: { label: "ID" } },
-              [
-                _c("b-numberinput", {
-                  attrs: { placeholder: "ID" },
-                  model: {
-                    value: _vm.id,
-                    callback: function($$v) {
-                      _vm.id = $$v
-                    },
-                    expression: "id"
                   }
                 })
               ],
