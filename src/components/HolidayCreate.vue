@@ -13,13 +13,24 @@
                              placeholder="Staff">
                     </b-input>
                 </b-field>
+
+
                 <b-field label="Days"
                          :type="{ 'is-danger': $v.days.$error }"
                          :message="{'Days required' : !days.required}">
-                    <b-numberinput v-model.trim="$v.days.$model"
+                    <b-numberinput v-model.trim.number="$v.days.$model"
                                    placeholder="Days">
                     </b-numberinput>
                 </b-field>
+                <b-field label="Hours"
+                         :type="{ 'is-danger': $v.hours.$error }"
+                         :message="{'Days required' : !hours.required}">
+                    <b-numberinput v-model.trim.number="$v.hours.$model"
+                                   placeholder="Hours">
+                    </b-numberinput>
+                </b-field>
+
+
                 <br>
                 <div class="field">
                     <div class="control">
@@ -47,6 +58,7 @@
             return {
                 staff : '',
                 days: 0,
+                hours: 0,
                 submitStatus: null
             }
         },
@@ -54,6 +66,11 @@
         validations: {
             staff: {required},
             days: {
+                required,
+                numeric,
+                minValue: minValue(1)
+            },
+            hours: {
                 required,
                 numeric,
                 minValue: minValue(1)
@@ -69,7 +86,7 @@
                 } else {
                     axios.post('/api/holiday', {
                         staff: this.staff,
-                        days: this.days
+                        hours: this.hours + (this.days * 8)
                     })
                         .then(response => {
                             this.submitStatus = 'OK'

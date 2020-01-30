@@ -1919,12 +1919,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       staff: '',
       days: 0,
+      hours: 0,
       submitStatus: null
     };
   },
@@ -1933,6 +1945,11 @@ __webpack_require__.r(__webpack_exports__);
       required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
     },
     days: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
+      numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["numeric"],
+      minValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minValue"])(1)
+    },
+    hours: {
       required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"],
       numeric: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["numeric"],
       minValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minValue"])(1)
@@ -1950,7 +1967,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         axios.post('/api/holiday', {
           staff: this.staff,
-          days: this.days
+          hours: this.hours + this.days * 8
         }).then(function (response) {
           _this.submitStatus = 'OK';
         })["catch"](function (e) {
@@ -16563,10 +16580,38 @@ var render = function() {
                       _vm.$set(
                         _vm.$v.days,
                         "$model",
-                        typeof $$v === "string" ? $$v.trim() : $$v
+                        _vm._n(typeof $$v === "string" ? $$v.trim() : $$v)
                       )
                     },
                     expression: "$v.days.$model"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "b-field",
+              {
+                attrs: {
+                  label: "Hours",
+                  type: { "is-danger": _vm.$v.hours.$error },
+                  message: { "Days required": !_vm.hours.required }
+                }
+              },
+              [
+                _c("b-numberinput", {
+                  attrs: { placeholder: "Hours" },
+                  model: {
+                    value: _vm.$v.hours.$model,
+                    callback: function($$v) {
+                      _vm.$set(
+                        _vm.$v.hours,
+                        "$model",
+                        _vm._n(typeof $$v === "string" ? $$v.trim() : $$v)
+                      )
+                    },
+                    expression: "$v.hours.$model"
                   }
                 })
               ],
@@ -16638,7 +16683,7 @@ var render = function() {
       _vm._v(" "),
       _c("p", [_vm._v("Name: " + _vm._s(_vm.holiday.staff))]),
       _vm._v(" "),
-      _c("p", [_vm._v("Days: " + _vm._s(_vm.holiday.days))])
+      _c("p", [_vm._v("Days: " + _vm._s(_vm.holiday.hours / 8))])
     ])
   ])
 }
@@ -35116,8 +35161,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
+__webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
 
 
 /***/ })

@@ -3,7 +3,7 @@
         <div class="box">
             <p>ID: {{holiday.id}}</p>
             <p>Name: {{holiday.staff}}</p>
-            <p>Days: {{holiday.days}}</p>
+            <p>Days: {{holiday.hours / 8}}</p>
         </div>
     </div>
 </template>

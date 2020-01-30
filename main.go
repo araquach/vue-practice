@@ -14,8 +14,8 @@ import (
 
 type Holiday struct {
 	ID 				uint 	`json:"id"`
-	Staff 	string 	`json:"staff"`
-	Days 			int 	`json:"days"`
+	Staff 			string 	`json:"staff"`
+	Hours 			int 	`json:"hours"`
 }
 
 var tplIndex *template.Template
