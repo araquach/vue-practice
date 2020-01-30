@@ -1867,6 +1867,68 @@ module.exports = function isBuffer (obj) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/FormTest.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormTest.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      flatA: '',
+      flatB: '',
+      forGroup: {
+        nested: ''
+      }
+    };
+  },
+  validations: {
+    flatA: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+    },
+    flatB: {
+      required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+    },
+    forGroup: {
+      nested: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["required"]
+      }
+    },
+    validationGroup: ['flatA', 'flatB', 'forGroup.nested']
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/HolidayCreate.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HolidayCreate.vue?vue&type=script&lang=js& ***!
@@ -1878,6 +1940,9 @@ module.exports = function isBuffer (obj) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -16484,6 +16549,174 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("router-view")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/FormTest.vue?vue&type=template&id=711938a6&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormTest.vue?vue&type=template&id=711938a6& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "div",
+        {
+          staticClass: "form-group",
+          class: { "is-danger": _vm.$v.flatA.$error }
+        },
+        [
+          _c("label", { staticClass: "form__label" }, [_vm._v("Flat A")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.$v.flatA.$model,
+                expression: "$v.flatA.$model",
+                modifiers: { trim: true }
+              }
+            ],
+            staticClass: "form__input",
+            domProps: { value: _vm.$v.flatA.$model },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$v.flatA, "$model", $event.target.value.trim())
+              },
+              blur: function($event) {
+                return _vm.$forceUpdate()
+              }
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      !_vm.$v.flatA.required
+        ? _c("div", { staticClass: "error" }, [_vm._v("Field is required.")])
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "form-group",
+          class: { "is-danger": _vm.$v.flatB.$error }
+        },
+        [
+          _c("label", { staticClass: "form__label" }, [_vm._v("Flat B")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.$v.flatB.$model,
+                expression: "$v.flatB.$model",
+                modifiers: { trim: true }
+              }
+            ],
+            staticClass: "form__input",
+            domProps: { value: _vm.$v.flatB.$model },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$v.flatB, "$model", $event.target.value.trim())
+              },
+              blur: function($event) {
+                return _vm.$forceUpdate()
+              }
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      !_vm.$v.flatB.required
+        ? _c("div", { staticClass: "error" }, [_vm._v("Field is required.")])
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "form-group",
+          class: { "is-danger": _vm.$v.forGroup.nested.$error }
+        },
+        [
+          _c("label", { staticClass: "form__label" }, [_vm._v("Nested field")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.$v.forGroup.nested.$model,
+                expression: "$v.forGroup.nested.$model",
+                modifiers: { trim: true }
+              }
+            ],
+            staticClass: "form__input",
+            domProps: { value: _vm.$v.forGroup.nested.$model },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(
+                  _vm.$v.forGroup.nested,
+                  "$model",
+                  $event.target.value.trim()
+                )
+              },
+              blur: function($event) {
+                return _vm.$forceUpdate()
+              }
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      !_vm.$v.forGroup.nested.required
+        ? _c("div", { staticClass: "error" }, [_vm._v("Field is required.")])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "form-group",
+        class: { "is-danger": _vm.$v.validationGroup.$error }
+      }),
+      _vm._v(" "),
+      _vm.$v.validationGroup.$error
+        ? _c("div", { staticClass: "error" }, [_vm._v("Group is invalid.")])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("tree-view", {
+        attrs: {
+          data: _vm.$v.validationGroup,
+          options: { rootObjectKey: "$v.validationGroup", maxDepth: 2 }
+        }
+      })
     ],
     1
   )
@@ -34878,6 +35111,75 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 /***/ }),
 
+/***/ "./src/components/FormTest.vue":
+/*!*************************************!*\
+  !*** ./src/components/FormTest.vue ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormTest.vue?vue&type=template&id=711938a6& */ "./src/components/FormTest.vue?vue&type=template&id=711938a6&");
+/* harmony import */ var _FormTest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormTest.vue?vue&type=script&lang=js& */ "./src/components/FormTest.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormTest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/components/FormTest.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/components/FormTest.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./src/components/FormTest.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib??ref--4-0!../../node_modules/vue-loader/lib??vue-loader-options!./FormTest.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/FormTest.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTest_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/FormTest.vue?vue&type=template&id=711938a6&":
+/*!********************************************************************!*\
+  !*** ./src/components/FormTest.vue?vue&type=template&id=711938a6& ***!
+  \********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./FormTest.vue?vue&type=template&id=711938a6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/FormTest.vue?vue&type=template&id=711938a6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTest_vue_vue_type_template_id_711938a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/HolidayCreate.vue":
 /*!******************************************!*\
   !*** ./src/components/HolidayCreate.vue ***!
@@ -35097,6 +35399,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
 /* harmony import */ var _components_HolidayIndex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HolidayIndex */ "./src/components/HolidayIndex.vue");
 /* harmony import */ var _components_HolidayCreate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HolidayCreate */ "./src/components/HolidayCreate.vue");
+/* harmony import */ var _components_FormTest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/FormTest */ "./src/components/FormTest.vue");
+
 
 
 var routes = [{
@@ -35105,6 +35409,9 @@ var routes = [{
 }, {
   path: '/book',
   component: _components_HolidayCreate__WEBPACK_IMPORTED_MODULE_1__["default"]
+}, {
+  path: '/form',
+  component: _components_FormTest__WEBPACK_IMPORTED_MODULE_2__["default"]
 }];
 
 /***/ }),
