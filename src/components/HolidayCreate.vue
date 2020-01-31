@@ -7,8 +7,8 @@
             <h1 class="title is-4">Book a Holiday</h1>
             <form @submit.prevent="submit">
                 <b-field label="Staff"
-                         :type="{ 'is-danger': $v.staff.$error }"
-                         :message="{'Staff Required' : !staff.required}">
+                                   :type="{ 'is-danger': $v.staff.$error }"
+                                   :message="{'Staff Required' : !staff.required}">
                     <b-input v-model.trim="$v.staff.$model"
                              placeholder="Staff">
                     </b-input>

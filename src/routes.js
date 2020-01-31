@@ -4,6 +4,5 @@ import FormTest from "./components/FormTest";
 
 export const routes = [
     { path: '', component: HolidayIndex},
-    { path: '/book', component: HolidayCreate},
-    { path: '/form', component: FormTest}
+    { path: '/book', component: HolidayCreate}
 ]
