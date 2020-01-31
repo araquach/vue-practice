@@ -13,6 +13,10 @@ export const store = new Vuex.Store({
     mutations: {
         SET_HOLIDAYS (state, holidays) {
             state.holidays = holidays
+        },
+
+        NEW_HOLIDAY (state, holidays, payload) {
+            holidays.push(payload)
         }
     },
 
@@ -24,6 +28,10 @@ export const store = new Vuex.Store({
                 .then(holidays => {
                     commit('SET_HOLIDAYS', holidays)
                 })
+        },
+
+        newHoliday () {
+
         }
     },
     modules: {
