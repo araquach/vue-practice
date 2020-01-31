@@ -1940,6 +1940,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1995,6 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2020,7 +2028,7 @@ __webpack_require__.r(__webpack_exports__);
       minValue: Object(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__["minValue"])(1)
     }
   },
-  methods: {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])(['newHoliday']), {
     submit: function submit() {
       var _this = this;
 
@@ -2035,12 +2043,14 @@ __webpack_require__.r(__webpack_exports__);
           hours: this.hours + this.days * 8
         }).then(function (response) {
           _this.submitStatus = 'OK';
+
+          _this.store.dispatch('newHoliday', payload);
         })["catch"](function (e) {
           console.error(e);
         });
       }
     }
-  }
+  })
 });
 
 /***/ }),
@@ -35444,6 +35454,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   mutations: {
     SET_HOLIDAYS: function SET_HOLIDAYS(state, holidays) {
       state.holidays = holidays;
+    },
+    newHoliday: function newHoliday(state, holidays, payload) {
+      holidays.push(payload);
     }
   },
   actions: {
@@ -35468,8 +35481,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
+__webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /Users/adam-home/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
 
 
 /***/ })

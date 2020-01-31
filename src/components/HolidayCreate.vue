@@ -55,6 +55,7 @@
 
 <script>
     import {required, numeric, minValue} from 'vuelidate/lib/validators'
+    import {mapMutations} from 'vuex'
 
     export default {
         data() {
@@ -65,6 +66,8 @@
                 submitStatus: null
             }
         },
+
+
 
         validations: {
             staff: {required},
@@ -81,6 +84,10 @@
         },
 
         methods: {
+            ...mapMutations([
+                'newHoliday'
+            ]),
+
             submit() {
                 console.log('submit!')
                 this.$v.$touch()
@@ -93,6 +100,7 @@
                     })
                         .then(response => {
                             this.submitStatus = 'OK'
+                            this.store.dispatch('newHoliday', payload)
                         })
                         .catch((e) => {
                             console.error(e)

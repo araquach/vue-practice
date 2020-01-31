@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
             state.holidays = holidays
         },
 
-        NEW_HOLIDAY (state, holidays, payload) {
+        newHoliday (state, holidays, payload) {
             holidays.push(payload)
         }
     },
@@ -28,10 +28,6 @@ export const store = new Vuex.Store({
                 .then(holidays => {
                     commit('SET_HOLIDAYS', holidays)
                 })
-        },
-
-        newHoliday () {
-
         }
     },
     modules: {
