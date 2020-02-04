@@ -10,12 +10,14 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"time"
 )
 
 type Holiday struct {
-	ID 				uint 	`json:"id"`
-	Staff 			string 	`json:"staff"`
-	Hours 			int 	`json:"hours"`
+	ID uint `json:"id"`
+	StartDate time.Time `json:"start_date"`
+	EndDate time.Time `json:"end_date"`
+	Saturdays float32 `json:"saturdays"`
 }
 
 var tplIndex *template.Template

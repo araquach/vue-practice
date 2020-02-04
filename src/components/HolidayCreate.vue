@@ -6,47 +6,27 @@
             <hr>
             <h1 class="title is-4">Book a Holiday</h1>
             <form @submit.prevent="submit">
-                <b-field label="Staff"
-                                   :type="{ 'is-danger': $v.staff.$error }"
-                                   :message="{'Staff Required' : !staff.required}">
-                    <b-input v-model.trim="$v.staff.$model"
-                             placeholder="Staff">
-                    </b-input>
+                <b-field label="Start date">
+                    <b-datepicker
+                            v-model="start_date"
+                            placeholder="Start Date"
+                            icon="calendar-today">
+                    </b-datepicker>
                 </b-field>
 
-
-                <b-field label="Days"
-                         :type="{ 'is-danger': $v.days.$error }"
-                         :message="{'Days required' : !days.required}">
-                    <b-numberinput v-model.trim.number="$v.days.$model"
-                                   placeholder="Days">
-                    </b-numberinput>
+                <b-field label="End date">
+                    <b-datepicker
+                            v-model="end_date"
+                            placeholder="End Date"
+                            icon="calendar-today">
+                    </b-datepicker>
                 </b-field>
-                <b-field label="Hours"
-                         :type="{ 'is-danger': $v.hours.$error }"
-                         :message="{'Days required' : !hours.required}">
-                    <b-numberinput v-model.trim.number="$v.hours.$model"
-                                   placeholder="Hours">
-                    </b-numberinput>
-                </b-field>
-
-
-
-
-
-                <br>
                 <div class="field">
-                    <div class="control">
-                        <button class="button is-primary"
-                                type="submit"
-                                :disabled="submitStatus === 'PENDING'">
-                            Book Holiday
-                        </button>
-                    </div>
+                    <label>Saturdays</label>
+                    <input v-model="saturdays">
                 </div>
-
-                <div v-if="submitStatus === 'OK'">
-                    <p class="is-size-4 has-text-primary">Holiday request submitted</p>
+                <div class="field">
+                    <button class="button" type="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -54,32 +34,14 @@
 </template>
 
 <script>
-    import {required, numeric, minValue} from 'vuelidate/lib/validators'
     import {mapMutations} from 'vuex'
 
     export default {
         data() {
             return {
-                staff : '',
-                days: 0,
-                hours: 0,
-                submitStatus: null
-            }
-        },
-
-
-
-        validations: {
-            staff: {required},
-            days: {
-                required,
-                numeric,
-                minValue: minValue(1)
-            },
-            hours: {
-                required,
-                numeric,
-                minValue: minValue(1)
+                start_date: null,
+                end_date: null,
+                saturdays: 0
             }
         },
 
@@ -90,23 +52,15 @@
 
             submit() {
                 console.log('submit!')
-                this.$v.$touch()
-                if (this.$v.$invalid) {
-                    this.submitStatus = 'ERROR'
-                } else {
                     axios.post('/api/holiday', {
-                        staff: this.staff,
-                        hours: this.hours + (this.days * 8)
+                        start_date: this.start_date,
+                        end_date: this.end_date,
+                        saturdays: this.saturdays
                     })
-                        .then(response => {
-                            this.submitStatus = 'OK'
-                            this.store.dispatch('newHoliday', payload)
-                        })
-                        .catch((e) => {
-                            console.error(e)
-                        })
+                    .catch((e) => {
+                        console.error(e)
+                    })
                 }
-            }
         }
     }
 </script>

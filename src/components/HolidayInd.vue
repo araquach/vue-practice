@@ -2,8 +2,9 @@
     <div class="column is-3">
         <div class="box">
             <p>ID: {{holiday.id}}</p>
-            <p>Name: {{holiday.staff}}</p>
-            <p>Days: {{holiday.hours / 8}}</p>
+            <p>Start Date: {{holiday.start_date}}</p>
+            <p>End Date: {{holiday.end_date}}</p>
+            <p>Saturdays: {{holiday.saturdays}}</p>
         </div>
     </div>
 </template>
