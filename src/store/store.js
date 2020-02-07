@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-        holidays: []
+        holidays: [],
+        newHoliday: {}
     },
     getters: {
         holidays: state => state.holidays
@@ -15,23 +16,26 @@ export const store = new Vuex.Store({
             state.holidays = holidays
         },
 
-        newHoliday (state, holidays, payload) {
-            holidays.push(payload)
+        ADD_HOLIDAY (state, holiday) {
+            state.holidays.push(holiday)
         }
     },
 
     actions: {
         loadHolidays ({ commit }) {
-            axios
+            return axios
                 .get('/api/holidays')
                 .then(r=> r.data)
                 .then(holidays => {
                     commit('SET_HOLIDAYS', holidays)
                 })
-        }
-    },
-    modules: {
+        },
 
+        addHoliday ({ commit }, holiday) {
+            axios.post('/api/holiday', holiday).then(_ => {
+                commit('ADD_HOLIDAY', holiday)
+            })
+        }
     }
 })
 
