@@ -6,9 +6,16 @@
             <hr>
             <h1 class="title is-4">Book a Holiday</h1>
             <form @submit="addHoliday">
-                <div class="field">
-                    <input type="text" v-model="holiday.name">
-                </div>
+                <b-field label="Name"
+                         :type="{ 'is-danger': $v.holiday.name.$error }">
+                    <b-input v-model="holiday.name"
+                             @blur="$v.holiday.name.$touch()"
+                             placeholder="Name">
+                    </b-input>
+                </b-field>
+                <template v-if="$v.holiday.name.$error"> <!-- displays when error is true -->
+                    <p v-if="!$v.holiday.name.required" class="is-danger">Name is required.</p>
+                </template>
                 <div class="field">
                     <button class="button" type="submit">Submit</button>
                 </div>
@@ -19,10 +26,18 @@
 
 <script>
     import {mapMutations} from 'vuex'
+    import {required} from 'vuelidate/lib/validators'
+
     export default {
         data() {
             return {
                 holiday: this.createNewHolidayObject()
+            }
+        },
+
+        validations: {
+            holiday: {
+                name: { required }
             }
         },
 
