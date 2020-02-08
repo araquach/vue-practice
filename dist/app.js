@@ -1911,6 +1911,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1923,13 +1946,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     holiday: {
       name: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
+      },
+      age: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
+      },
+      date: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_1__["required"]
       }
     }
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['newHoliday']), {
     createNewHolidayObject: function createNewHolidayObject() {
       return {
-        name: name
+        name: this.name,
+        age: this.age,
+        date: this.date
       };
     },
     addHoliday: function addHoliday() {
@@ -1955,6 +1986,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -16530,6 +16562,82 @@ var render = function() {
                 ]
               : _vm._e(),
             _vm._v(" "),
+            _c(
+              "b-field",
+              {
+                attrs: {
+                  label: "Age",
+                  type: { "is-danger": _vm.$v.holiday.age.$error }
+                }
+              },
+              [
+                _c("b-input", {
+                  attrs: { placeholder: "Age" },
+                  on: {
+                    blur: function($event) {
+                      return _vm.$v.holiday.age.$touch()
+                    }
+                  },
+                  model: {
+                    value: _vm.holiday.age,
+                    callback: function($$v) {
+                      _vm.$set(_vm.holiday, "age", _vm._n($$v))
+                    },
+                    expression: "holiday.age"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.$v.holiday.age.$error
+              ? [
+                  !_vm.$v.holiday.age.required
+                    ? _c("p", { staticClass: "is-danger" }, [
+                        _vm._v("Age is required.")
+                      ])
+                    : _vm._e()
+                ]
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "b-field",
+              {
+                attrs: {
+                  label: "Date",
+                  type: { "is-danger": _vm.$v.holiday.date.$error }
+                }
+              },
+              [
+                _c("b-input", {
+                  attrs: { placeholder: "Age" },
+                  on: {
+                    blur: function($event) {
+                      return _vm.$v.holiday.date.$touch()
+                    }
+                  },
+                  model: {
+                    value: _vm.holiday.date,
+                    callback: function($$v) {
+                      _vm.$set(_vm.holiday, "date", $$v)
+                    },
+                    expression: "holiday.date"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.$v.holiday.date.$error
+              ? [
+                  !_vm.$v.holiday.date.required
+                    ? _c("p", { staticClass: "is-danger" }, [
+                        _vm._v("Date is required.")
+                      ])
+                    : _vm._e()
+                ]
+              : _vm._e(),
+            _vm._v(" "),
             _vm._m(0)
           ],
           2
@@ -16576,7 +16684,9 @@ var render = function() {
     _c("div", { staticClass: "box" }, [
       _c("p", [_vm._v("ID: " + _vm._s(_vm.holiday.id))]),
       _vm._v(" "),
-      _c("p", [_vm._v("Name: " + _vm._s(_vm.holiday.name))])
+      _c("p", [_vm._v("Name: " + _vm._s(_vm.holiday.name))]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Age: " + _vm._s(_vm.holiday.age))])
     ])
   ])
 }
@@ -35063,8 +35173,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adam-macbook/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! /Users/adam-macbook/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
+__webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.scss */"./src/app.scss");
 
 
 /***/ })

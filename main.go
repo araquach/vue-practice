@@ -13,8 +13,10 @@ import (
 )
 
 type Holiday struct {
-	ID uint `json:"id"`
-	Name string `json:"name"`
+	ID 		uint 		`json:"id"`
+	Name 	string 		`json:"name"`
+	Age 	uint 		`json:"age"`
+	Date	string 		`json:"date"`
 }
 
 var tplIndex *template.Template
