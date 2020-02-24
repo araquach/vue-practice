@@ -35771,7 +35771,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
     }
   }, {
     path: '',
-    component: _components_HolidayIndex__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _components_HolidayIndex__WEBPACK_IMPORTED_MODULE_6__["default"],
+    meta: {
+      requiresAuth: true
+    }
   }, {
     path: '/book',
     component: _components_HolidayCreate__WEBPACK_IMPORTED_MODULE_7__["default"]

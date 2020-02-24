@@ -31,7 +31,13 @@ let router = new Router({
             }
         },
 
-        { path: '', component: HolidayIndex},
+        {
+            path: '',
+            component: HolidayIndex,
+            meta: {
+                requiresAuth: true
+            }
+        },
         { path: '/book', component: HolidayCreate},
     ]
 })
