@@ -1,27 +1,23 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import store from './store'
+import router from './routes'
+import Axios from 'axios'
 import Vuelidate from 'vuelidate'
 import App from './App.vue'
 import Buefy from 'buefy'
-import { routes } from "./routes"
-
 
 Vue.use(Buefy)
 Vue.use(Vuelidate)
-Vue.use(VueRouter)
 
-import { store } from './store/store'
-
-
-window.axios = require('axios')
-
-const router = new VueRouter({
-    routes
-})
+Vue.prototype.$http = Axios
+const token = localStorage.getItem('token')
+if (token) {
+    Vue.prototype.$http.defaults.headers.common['Authorization']
+}
 
 new Vue({
     el: '#app',
     router,
     store,
     render: h => h(App)
-})
+}).$mount('#app')
