@@ -3,7 +3,7 @@
     <div class="box">
       <h5 class="title is-3" v-text="thecardtitle"></h5>
       <button @click="sendMessage" class="button is-primary">Send Child A Message</button>
-      <child-card :parentmessage="parentmessage"></child-card>
+      <child-card :parentmessage="parentmessage" @finished="finished"></child-card>
     </div>
   </div>
 </template>
@@ -24,6 +24,9 @@ export default {
   methods: {
     sendMessage() {
       this.parentmessage = '<b>Message From Parent:</b> Do Your Homework'
+    },
+    finished() {
+      this.parentmessage = ''
     }
   }
 }

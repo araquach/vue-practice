@@ -122,6 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['parentmessage'],
   data: function data() {
@@ -129,6 +130,11 @@ __webpack_require__.r(__webpack_exports__);
       thecardtitle: 'Child Component!',
       thecardbody: 'I\'m just a child.'
     };
+  },
+  methods: {
+    ok: function ok() {
+      this.$emit('finished');
+    }
   }
 });
 
@@ -168,6 +174,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     sendMessage: function sendMessage() {
       this.parentmessage = '<b>Message From Parent:</b> Do Your Homework';
+    },
+    finished: function finished() {
+      this.parentmessage = '';
     }
   }
 });
@@ -707,6 +716,14 @@ var render = function() {
             staticClass: "has-text-danger",
             domProps: { innerHTML: _vm._s(_vm.parentmessage) }
           })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.parentmessage
+        ? _c(
+            "button",
+            { staticClass: "button is-success", on: { click: _vm.ok } },
+            [_vm._v("Ok")]
+          )
         : _vm._e()
     ])
   ])
@@ -749,7 +766,10 @@ var render = function() {
           [_vm._v("Send Child A Message")]
         ),
         _vm._v(" "),
-        _c("child-card", { attrs: { parentmessage: _vm.parentmessage } })
+        _c("child-card", {
+          attrs: { parentmessage: _vm.parentmessage },
+          on: { finished: _vm.finished }
+        })
       ],
       1
     )
