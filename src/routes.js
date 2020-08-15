@@ -1,9 +1,9 @@
-import Main from './components/main'
+import Home from './components/Home'
 
 export const routes = [
     {
         path: '',
-        name: 'main',
-        component: Main
+        name: 'home',
+        component: Home
     }
 ]
