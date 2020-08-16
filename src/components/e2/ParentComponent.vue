@@ -9,13 +9,14 @@
 import ChildComponent from "./ChildComponent";
 
 export default {
-  data: function() {
-    return {
-      parentData: "Jithil"
-    };
-  },
   components: {
     ChildComponent
+  },
+
+  data() {
+    return {
+      parentData: "Adam"
+    }
   }
 }
 </script>
