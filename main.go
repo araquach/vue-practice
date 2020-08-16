@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"html/template"
@@ -27,6 +28,7 @@ func init() {
 
 func main() {
 	var err error
+	var dir string
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -39,13 +41,14 @@ func main() {
 		panic(err)
 	}
 
-	r := mux.NewRouter()
-	r.HandleFunc("/", index).Methods("GET")
+	flag.StringVar(&dir, "dir", "dist", "the directory to serve files from")
+	flag.Parse()
 
-	// Assett Handler
-	assetHandler := http.FileServer(http.Dir("./dist/"))
-	assetHandler = http.StripPrefix("/dist/", assetHandler)
-	r.PathPrefix("/dist/").Handler(assetHandler)
+	r := mux.NewRouter()
+	r.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", http.FileServer(http.Dir(dir))))
+	r.HandleFunc("/{category}/{name}", index)
+	r.HandleFunc("/{name}", index)
+	r.HandleFunc("/", index).Methods("GET")
 
 	log.Printf("Starting server on %s", port)
 
