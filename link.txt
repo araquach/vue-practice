@@ -1,0 +1,3 @@
+Example 2
+
+https://medium.com/@jithilmt/vue-js-2-two-way-data-binding-in-parent-and-child-components-1cd271c501ba
