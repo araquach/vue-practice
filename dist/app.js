@@ -271,6 +271,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    selectedColour: Number
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/e3/FinishSelector.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/e3/FinishSelector.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -278,7 +313,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    chosenColour: Number
+    chosenFinish: Number
   }
 });
 
@@ -294,6 +329,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ColourSelector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColourSelector */ "./src/components/e3/ColourSelector.vue");
+/* harmony import */ var _FinishSelector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FinishSelector */ "./src/components/e3/FinishSelector.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -302,13 +342,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ColourSelector: _ColourSelector__WEBPACK_IMPORTED_MODULE_0__["default"]
+    ColourSelector: _ColourSelector__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FinishSelector: _FinishSelector__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      selectedColour: 0
+      selectedColour: 0,
+      selectedFinish: 0
     };
   }
 });
@@ -1074,18 +1117,18 @@ var render = function() {
         staticClass: "button",
         on: {
           click: function($event) {
-            return _vm.$emit("update:chosenColour", 1)
+            return _vm.$emit("update:selectedColour", 1)
           }
         },
         model: {
-          value: _vm.chosenColour,
+          value: _vm.selectedColour,
           callback: function($$v) {
-            _vm.chosenColour = _vm._n($$v)
+            _vm.selectedColour = _vm._n($$v)
           },
-          expression: "chosenColour"
+          expression: "selectedColour"
         }
       },
-      [_vm._v("\n      Colour 1\n    ")]
+      [_vm._v("\n    Colour 1\n  ")]
     ),
     _vm._v(" "),
     _c(
@@ -1094,18 +1137,18 @@ var render = function() {
         staticClass: "button",
         on: {
           click: function($event) {
-            return _vm.$emit("update:chosenColour", 2)
+            return _vm.$emit("update:selectedColour", 2)
           }
         },
         model: {
-          value: _vm.chosenColour,
+          value: _vm.selectedColour,
           callback: function($$v) {
-            _vm.chosenColour = _vm._n($$v)
+            _vm.selectedColour = _vm._n($$v)
           },
-          expression: "chosenColour"
+          expression: "selectedColour"
         }
       },
-      [_vm._v("\n      Colour 2\n    ")]
+      [_vm._v("\n    Colour 2\n  ")]
     ),
     _vm._v(" "),
     _c(
@@ -1114,18 +1157,18 @@ var render = function() {
         staticClass: "button",
         on: {
           click: function($event) {
-            return _vm.$emit("update:chosenColour", 3)
+            return _vm.$emit("update:selectedColour", 3)
           }
         },
         model: {
-          value: _vm.chosenColour,
+          value: _vm.selectedColour,
           callback: function($$v) {
-            _vm.chosenColour = _vm._n($$v)
+            _vm.selectedColour = _vm._n($$v)
           },
-          expression: "chosenColour"
+          expression: "selectedColour"
         }
       },
-      [_vm._v("\n      Colour 3\n    ")]
+      [_vm._v("\n    Colour 3\n  ")]
     ),
     _vm._v(" "),
     _c(
@@ -1134,18 +1177,18 @@ var render = function() {
         staticClass: "button",
         on: {
           click: function($event) {
-            return _vm.$emit("update:chosenColour", 4)
+            return _vm.$emit("update:selectedColour", 4)
           }
         },
         model: {
-          value: _vm.chosenColour,
+          value: _vm.selectedColour,
           callback: function($$v) {
-            _vm.chosenColour = _vm._n($$v)
+            _vm.selectedColour = _vm._n($$v)
           },
-          expression: "chosenColour"
+          expression: "selectedColour"
         }
       },
-      [_vm._v("\n      Colour 4\n    ")]
+      [_vm._v("\n    Colour 4\n  ")]
     ),
     _vm._v(" "),
     _c(
@@ -1154,21 +1197,149 @@ var render = function() {
         staticClass: "button",
         on: {
           click: function($event) {
-            return _vm.$emit("update:chosenColour", 5)
+            return _vm.$emit("update:selectedColour", 5)
           }
         },
         model: {
-          value: _vm.chosenColour,
+          value: _vm.selectedColour,
           callback: function($$v) {
-            _vm.chosenColour = _vm._n($$v)
+            _vm.selectedColour = _vm._n($$v)
           },
-          expression: "chosenColour"
+          expression: "selectedColour"
         }
       },
-      [_vm._v("\n      Colour 5\n    ")]
+      [_vm._v("\n    Colour 5\n  ")]
     ),
     _vm._v(" "),
-    _c("p", [_vm._v("Chosen Colour: " + _vm._s(_vm.chosenColour))])
+    _c("p", [_vm._v("Selected Colour: " + _vm._s(_vm.selectedColour))])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "section box" }, [
+    _c("h3", [_vm._v("Finish Selector")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button",
+        on: {
+          click: function($event) {
+            return _vm.$emit("update:chosenFinish", 1)
+          }
+        },
+        model: {
+          value: _vm.chosenFinish,
+          callback: function($$v) {
+            _vm.chosenFinish = _vm._n($$v)
+          },
+          expression: "chosenFinish"
+        }
+      },
+      [_vm._v("\n    Finish 1\n  ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button",
+        on: {
+          click: function($event) {
+            return _vm.$emit("update:chosenFinish", 2)
+          }
+        },
+        model: {
+          value: _vm.chosenFinish,
+          callback: function($$v) {
+            _vm.chosenFinish = _vm._n($$v)
+          },
+          expression: "chosenFinish"
+        }
+      },
+      [_vm._v("\n    Finish 2\n  ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button",
+        on: {
+          click: function($event) {
+            return _vm.$emit("update:chosenFinish", 3)
+          }
+        },
+        model: {
+          value: _vm.chosenFinish,
+          callback: function($$v) {
+            _vm.chosenFinish = _vm._n($$v)
+          },
+          expression: "chosenFinish"
+        }
+      },
+      [_vm._v("\n    Finish 3\n  ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button",
+        on: {
+          click: function($event) {
+            return _vm.$emit("update:chosenFinish", 4)
+          }
+        },
+        model: {
+          value: _vm.chosenFinish,
+          callback: function($$v) {
+            _vm.chosenFinish = _vm._n($$v)
+          },
+          expression: "chosenFinish"
+        }
+      },
+      [_vm._v("\n    Finish 4\n  ")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "button",
+        on: {
+          click: function($event) {
+            return _vm.$emit("update:chosenFinish", 5)
+          }
+        },
+        model: {
+          value: _vm.chosenFinish,
+          callback: function($$v) {
+            _vm.chosenFinish = _vm._n($$v)
+          },
+          expression: "chosenFinish"
+        }
+      },
+      [_vm._v("\n    Finish 5\n  ")]
+    ),
+    _vm._v(" "),
+    _c("p", [_vm._v("Chosen Finish: " + _vm._s(_vm.chosenFinish))])
   ])
 }
 var staticRenderFns = []
@@ -1199,19 +1370,39 @@ var render = function() {
     [
       _c("h3", [_vm._v("Main Selector")]),
       _vm._v(" "),
-      _c("p", [_vm._v("Selected Colour : " + _vm._s(_vm.selectedColour))]),
-      _vm._v(" "),
       _c("ColourSelector", {
-        attrs: { chosenColour: _vm.selectedColour },
+        attrs: { selectedColour: _vm.selectedColour },
         on: {
-          "update:chosenColour": function($event) {
+          "update:selectedColour": function($event) {
             _vm.selectedColour = $event
           },
-          "update:chosen-colour": function($event) {
+          "update:selected-colour": function($event) {
             _vm.selectedColour = $event
           }
         }
-      })
+      }),
+      _vm._v(" "),
+      _c("FinishSelector", {
+        attrs: { selectedFinish: _vm.selectedFinish },
+        on: {
+          "update:selectedFinish": function($event) {
+            _vm.selectedFinish = $event
+          },
+          "update:selected-finish": function($event) {
+            _vm.selectedFinish = $event
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v("Selected Colour : " + _vm._s(_vm.selectedColour))]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Selected Finish : " + _vm._s(_vm.selectedFinish))]),
+      _vm._v(" "),
+      _c("p", [
+        _c("strong", [
+          _vm._v("Total: " + _vm._s(_vm.selectedColour + _vm.selectedFinish))
+        ])
+      ])
     ],
     1
   )
@@ -16901,6 +17092,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColourSelector_vue_vue_type_template_id_cf92a868___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColourSelector_vue_vue_type_template_id_cf92a868___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/components/e3/FinishSelector.vue":
+/*!**********************************************!*\
+  !*** ./src/components/e3/FinishSelector.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FinishSelector.vue?vue&type=template&id=d5d2efda& */ "./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda&");
+/* harmony import */ var _FinishSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FinishSelector.vue?vue&type=script&lang=js& */ "./src/components/e3/FinishSelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FinishSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/components/e3/FinishSelector.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/components/e3/FinishSelector.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./src/components/e3/FinishSelector.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FinishSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FinishSelector.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/e3/FinishSelector.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FinishSelector_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda&":
+/*!*****************************************************************************!*\
+  !*** ./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FinishSelector.vue?vue&type=template&id=d5d2efda& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/e3/FinishSelector.vue?vue&type=template&id=d5d2efda&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FinishSelector_vue_vue_type_template_id_d5d2efda___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
