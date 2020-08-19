@@ -10,21 +10,21 @@ export const routes = [
         name: 'home',
         component: Home
     },
-    {
-        path: '/e1',
-        name: 'parent-card',
-        component: ParentCard
-    },
-    {
-        path: '/e2',
-        name: 'parent',
-        component: ParentComponent
-    },
-    {
-        path: '/e3',
-        name: 'main-selector',
-        component: MainSelector
-    },
+    // {
+    //     path: '/e1',
+    //     name: 'parent-card',
+    //     component: ParentCard
+    // },
+    // {
+    //     path: '/e2',
+    //     name: 'parent',
+    //     component: ParentComponent
+    // },
+    // {
+    //     path: '/e3',
+    //     name: 'main-selector',
+    //     component: MainSelector
+    // },
     {
         path: '/e4',
         name: 'accordian',
