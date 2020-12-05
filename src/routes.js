@@ -1,8 +1,5 @@
-import Home from "./components/Home";
-import ParentCard from "./components/e1/ParentCard"
-import ParentComponent from "./components/e2/ParentComponent.vue"
-import MainSelector from "./components/e3/MainSelector"
-import Accordian from "./components/e4/Accordian"
+import Home from "./components/Home"
+import Info from "./components/e5/Info"
 
 export const routes = [
     {
@@ -10,24 +7,9 @@ export const routes = [
         name: 'home',
         component: Home
     },
-    // {
-    //     path: '/e1',
-    //     name: 'parent-card',
-    //     component: ParentCard
-    // },
-    // {
-    //     path: '/e2',
-    //     name: 'parent',
-    //     component: ParentComponent
-    // },
-    // {
-    //     path: '/e3',
-    //     name: 'main-selector',
-    //     component: MainSelector
-    // },
     {
-        path: '/e4',
-        name: 'accordian',
-        component: Accordian
+        path: '/e5',
+        name: 'info',
+        component: Info
     }
 ]
