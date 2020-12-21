@@ -82,6 +82,10 @@ func main() {
 
 	r := mux.NewRouter()
 	r.PathPrefix("/dist/").Handler(http.StripPrefix("/dist/", http.FileServer(http.Dir(dir))))
+
+	r.HandleFunc("/signup", apiSignUp).Methods("POST")
+	r.HandleFunc("/signin", apiSignIn).Methods("POST")
+
 	r.HandleFunc("/{category}/{name}", index)
 	r.HandleFunc("/{name}", index)
 	r.HandleFunc("/", index).Methods("GET")
@@ -91,7 +95,7 @@ func main() {
 	http.ListenAndServe(":"+port, r)
 }
 
-func apiRegister(w http.ResponseWriter, r *http.Request) {
+func apiSignUp(w http.ResponseWriter, r *http.Request) {
 	var user User
 	var error Error
 
@@ -132,7 +136,7 @@ func apiRegister(w http.ResponseWriter, r *http.Request) {
 	responseJSON(w, user)
 }
 
-func apiLogin(w http.ResponseWriter, r *http.Request) {
+func apiSignIn(w http.ResponseWriter, r *http.Request) {
 	var user User
 	var error Error
 

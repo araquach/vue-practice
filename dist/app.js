@@ -2051,79 +2051,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       email: '',
-      age: null,
       password: '',
-      confirmPassword: '',
-      country: 'usa',
-      hobbyInputs: [],
-      terms: false
+      confirmPassword: ''
     };
   },
   methods: {
-    onAddHobby: function onAddHobby() {
-      var newHobby = {
-        id: Math.random() * Math.random() * 1000,
-        value: ''
-      };
-      this.hobbyInputs.push(newHobby);
-    },
-    onDeleteHobby: function onDeleteHobby(id) {
-      this.hobbyInputs = this.hobbyInputs.filter(function (hobby) {
-        return hobby.id !== id;
-      });
-    },
     onSubmit: function onSubmit() {
       var formData = {
         email: this.email,
-        age: this.age,
         password: this.password,
-        confirmPassword: this.confirmPassword,
-        country: this.country,
-        hobbies: this.hobbyInputs.map(function (hobby) {
-          return hobby.value;
-        }),
-        terms: this.terms
+        confirmPassword: this.confirmPassword
       };
       console.log(formData);
       this.$store.dispatch('signup', formData);
@@ -2142,8 +2083,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -3755,35 +3696,6 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "input" }, [
-            _c("label", { attrs: { for: "age" } }, [_vm._v("Your Age")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model.number",
-                  value: _vm.age,
-                  expression: "age",
-                  modifiers: { number: true }
-                }
-              ],
-              attrs: { type: "number", id: "age" },
-              domProps: { value: _vm.age },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.age = _vm._n($event.target.value)
-                },
-                blur: function($event) {
-                  return _vm.$forceUpdate()
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input" }, [
             _c("label", { attrs: { for: "password" } }, [_vm._v("Password")]),
             _vm._v(" "),
             _c("input", {
@@ -3833,152 +3745,6 @@ var render = function() {
                 }
               }
             })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input" }, [
-            _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.country,
-                    expression: "country"
-                  }
-                ],
-                attrs: { id: "country" },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.country = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              [
-                _c("option", { attrs: { value: "usa" } }, [_vm._v("USA")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "india" } }, [_vm._v("India")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "uk" } }, [_vm._v("UK")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "germany" } }, [
-                  _vm._v("Germany")
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "hobbies" }, [
-            _c("h3", [_vm._v("Add some Hobbies")]),
-            _vm._v(" "),
-            _c(
-              "button",
-              { attrs: { type: "button" }, on: { click: _vm.onAddHobby } },
-              [_vm._v("Add Hobby")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "hobby-list" },
-              _vm._l(_vm.hobbyInputs, function(hobbyInput, index) {
-                return _c("div", { key: hobbyInput.id, staticClass: "input" }, [
-                  _c("label", { attrs: { for: hobbyInput.id } }, [
-                    _vm._v("Hobby #" + _vm._s(index))
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: hobbyInput.value,
-                        expression: "hobbyInput.value"
-                      }
-                    ],
-                    attrs: { type: "text", id: hobbyInput.id },
-                    domProps: { value: hobbyInput.value },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(hobbyInput, "value", $event.target.value)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      attrs: { type: "button" },
-                      on: {
-                        click: function($event) {
-                          return _vm.onDeleteHobby(hobbyInput.id)
-                        }
-                      }
-                    },
-                    [_vm._v("X")]
-                  )
-                ])
-              }),
-              0
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input inline" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.terms,
-                  expression: "terms"
-                }
-              ],
-              attrs: { type: "checkbox", id: "terms" },
-              domProps: {
-                checked: Array.isArray(_vm.terms)
-                  ? _vm._i(_vm.terms, null) > -1
-                  : _vm.terms
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.terms,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.terms = $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        (_vm.terms = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
-                    }
-                  } else {
-                    _vm.terms = $$c
-                  }
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "terms" } }, [
-              _vm._v("Accept Terms of Use")
-            ])
           ]),
           _vm._v(" "),
           _vm._m(0)
@@ -20722,8 +20488,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue */ "./src/App.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./src/router.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./src/store.js");
 
@@ -20731,19 +20497,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-axios__WEBPACK_IMPORTED_MODULE_5___default.a.defaults.baseURL = 'https://vue-update.firebaseio.com'; // axios.defaults.headers.common['Authorization'] = 'fasfdsa'
-
-axios__WEBPACK_IMPORTED_MODULE_5___default.a.defaults.headers.get['Accepts'] = 'application/json';
-var reqInterceptor = axios__WEBPACK_IMPORTED_MODULE_5___default.a.interceptors.request.use(function (config) {
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.get['Accepts'] = 'application/json';
+var reqInterceptor = axios__WEBPACK_IMPORTED_MODULE_2___default.a.interceptors.request.use(function (config) {
   console.log('Request Interceptor', config);
   return config;
 });
-var resInterceptor = axios__WEBPACK_IMPORTED_MODULE_5___default.a.interceptors.response.use(function (res) {
+var resInterceptor = axios__WEBPACK_IMPORTED_MODULE_2___default.a.interceptors.response.use(function (res) {
   console.log('Response Interceptor', res);
   return res;
 });
-axios__WEBPACK_IMPORTED_MODULE_5___default.a.interceptors.request.eject(reqInterceptor);
-axios__WEBPACK_IMPORTED_MODULE_5___default.a.interceptors.response.eject(resInterceptor);
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.interceptors.request.eject(reqInterceptor);
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.interceptors.response.eject(resInterceptor);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -20775,13 +20539,10 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
-  baseURL: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty'
-}); // instance.defaults.headers.common['SOMETHING'] = 'something'
-
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create();
 /* harmony default export */ __webpack_exports__["default"] = (instance);
 
 /***/ }),
@@ -21268,18 +21029,18 @@ var router = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _axios_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./axios-auth */ "./src/axios-auth.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./src/router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router */ "./src/router.js");
 
 
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__["default"]);
-/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_5__["default"].Store({
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
     idToken: null,
     userId: null,
@@ -21308,7 +21069,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__
     signup: function signup(_ref2, authData) {
       var commit = _ref2.commit,
           dispatch = _ref2.dispatch;
-      _axios_auth__WEBPACK_IMPORTED_MODULE_2__["default"].post('/signupNewUser?key=AIzaSyCXlVPPWknVGhfc60mt7Jkv0Xzrho7_mwc', {
+      _axios_auth__WEBPACK_IMPORTED_MODULE_2__["default"].post('/signup', {
         email: authData.email,
         password: authData.password,
         returnSecureToken: true
@@ -21332,7 +21093,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__
     login: function login(_ref3, authData) {
       var commit = _ref3.commit,
           dispatch = _ref3.dispatch;
-      _axios_auth__WEBPACK_IMPORTED_MODULE_2__["default"].post('/verifyPassword?key=AIzaSyCXlVPPWknVGhfc60mt7Jkv0Xzrho7_mwc', {
+      _axios_auth__WEBPACK_IMPORTED_MODULE_2__["default"].post('/signin', {
         email: authData.email,
         password: authData.password,
         returnSecureToken: true
@@ -21379,7 +21140,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__
       localStorage.removeItem('expirationDate');
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
-      _router__WEBPACK_IMPORTED_MODULE_3__["default"].replace('/signin');
+      _router__WEBPACK_IMPORTED_MODULE_4__["default"].replace('/signin');
     },
     storeUser: function storeUser(_ref6, userData) {
       var commit = _ref6.commit,
@@ -21389,7 +21150,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__
         return;
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.post('/users.json' + '?auth=' + state.idToken, userData).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/users.json' + '?auth=' + state.idToken, userData).then(function (res) {
         return console.log(res);
       })["catch"](function (error) {
         return console.log(error);
@@ -21403,7 +21164,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__
         return;
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/users.json' + '?auth=' + state.idToken).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/users.json' + '?auth=' + state.idToken).then(function (res) {
         console.log(res);
         var data = res.data;
         var users = [];
