@@ -21049,7 +21049,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
   mutations: {
     authUser: function authUser(state, userData) {
       state.idToken = userData.token;
-      state.userId = userData.userId;
+      state.userId = userData.id;
     },
     storeUser: function storeUser(state, user) {
       state.user = user;
@@ -21098,15 +21098,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
         password: authData.password,
         returnSecureToken: true
       }).then(function (res) {
-        console.log(res);
-        var now = new Date();
-        var expirationDate = new Date(now.getTime() + res.data.expiresIn * 1000);
-        localStorage.setItem('token', res.data.idToken);
-        localStorage.setItem('userId', res.data.localId);
-        localStorage.setItem('expirationDate', expirationDate);
+        console.log(res.data.token);
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('userId', res.data.id);
         commit('authUser', {
-          token: res.data.idToken,
-          userId: res.data.localId
+          token: res.data.token,
+          userId: res.data.id
         });
         dispatch('setLogoutTimer', res.data.expiresIn);
       })["catch"](function (error) {
