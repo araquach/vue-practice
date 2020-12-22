@@ -23,8 +23,8 @@ export default {
     }
   },
   created () {
-    axios.get('//localhost:3000/dashboard').then(({ data }) => {
-      this.events = data.events.events
+    axios.get('/api/dashboard').then(({ data }) => {
+      this.events = data
       this.isLoading = false
     })
   }

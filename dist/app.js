@@ -2039,9 +2039,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('//localhost:3000/dashboard').then(function (_ref) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/dashboard').then(function (_ref) {
       var data = _ref.data;
-      _this.events = data.events.events;
+      _this.events = data;
       _this.isLoading = false;
     });
   }
