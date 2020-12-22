@@ -47,7 +47,6 @@
           password: this.password,
           confirmPassword: this.confirmPassword
         }
-        console.log(formData)
         this.$store.dispatch('signup', formData)
       }
     }
