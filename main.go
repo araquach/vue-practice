@@ -36,7 +36,7 @@ func main() {
 	}
 
 	tplIndex = template.Must(template.ParseFiles(
-		"views/main.gohtml"))
+		"index.gohtml"))
 	if err != nil {
 		panic(err)
 	}

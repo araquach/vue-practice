@@ -1,21 +1,12 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import App from './App.vue'
-import { routes } from './routes'
-import Buefy from 'buefy'
+import router from './router'
+import store from './store'
 
-
-Vue.use(Buefy)
-Vue.use(VueRouter)
-
-const router = new VueRouter({
-    mode: 'history',
-    routes
-})
-
+Vue.config.productionTip = false
 
 new Vue({
-    el: '#app',
-    router,
-    render: h => h(App)
-})
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
