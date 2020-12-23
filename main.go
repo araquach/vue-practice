@@ -253,13 +253,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&user)
 
 	if user.Email == "" {
-		error.Message = "Email is missing."
+		error.Message = "Please enter your email address"
 		respondWithError(w, http.StatusBadRequest, error)
 		return
 	}
 
 	if user.Password == "" {
-		error.Message = "Password is missing."
+		error.Message = "Please enter your password"
 		respondWithError(w, http.StatusBadRequest, error)
 		return
 	}
@@ -274,7 +274,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	err := bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 
 	if err != nil {
-		error.Message = "Invalid Password"
+		error.Message = "Invalid Login. Please try again"
 		respondWithError(w, http.StatusUnauthorized, error)
 		return
 	}

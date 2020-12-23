@@ -2161,11 +2161,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      error: null
     };
   },
   methods: {
@@ -2179,6 +2183,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: 'dashboard'
         });
+      })["catch"](function (err) {
+        _this.error = err.response.data.message;
       });
     }
   }
@@ -2220,12 +2226,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      error: null
     };
   },
   methods: {
@@ -2240,6 +2248,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: 'dashboard'
         });
+      })["catch"](function (err) {
+        _this.error = err.response.data.message;
       });
     }
   }
@@ -3508,9 +3518,11 @@ var render = function() {
     [
       _c("router-link", { attrs: { to: "/" } }, [_vm._v("\n    Home\n  ")]),
       _vm._v(" "),
-      _c("router-link", { attrs: { to: "/dashboard" } }, [
-        _vm._v("\n    Dashboard\n  ")
-      ]),
+      _vm.loggedIn
+        ? _c("router-link", { attrs: { to: "/dashboard" } }, [
+            _vm._v("\n    Dashboard\n  ")
+          ])
+        : _vm._e(),
       _vm._v(" "),
       !_vm.loggedIn
         ? _c(
@@ -3626,7 +3638,7 @@ var render = function() {
       ? _c(
           "div",
           [
-            _vm._v("\n    To use this App ypu'll need to\n    "),
+            _vm._v("\n    To use this App you'll need to\n    "),
             _c("router-link", { attrs: { to: "/login" } }, [_vm._v("Login")]),
             _vm._v("\n    or\n    "),
             _c("router-link", { attrs: { to: "/register" } }, [
@@ -3685,7 +3697,7 @@ var render = function() {
               expression: "email"
             }
           ],
-          attrs: { type: "email", name: "email", value: "" },
+          attrs: { name: "email", value: "" },
           domProps: { value: _vm.email },
           on: {
             input: function($event) {
@@ -3725,6 +3737,8 @@ var render = function() {
         _c("button", { attrs: { type: "submit", name: "button" } }, [
           _vm._v("\n      Login\n    ")
         ]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.error))]),
         _vm._v(" "),
         _c("router-link", { attrs: { to: "/register" } }, [
           _vm._v("Don't have an account? Register here >")
@@ -3846,6 +3860,8 @@ var render = function() {
         _c("button", { attrs: { type: "submit", name: "button" } }, [
           _vm._v("\n      Register\n    ")
         ]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.error))]),
         _vm._v(" "),
         _c("router-link", { attrs: { to: "/login" } }, [
           _vm._v("Already registered? Log in here >")
@@ -20436,6 +20452,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue */ "./src/App.vue");
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./src/router.js");
 /* harmony import */ var _vuex_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./vuex/store */ "./src/vuex/store.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -20444,6 +20463,26 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: _router__WEBPACK_IMPORTED_MODULE_2__["default"],
   store: _vuex_store__WEBPACK_IMPORTED_MODULE_3__["default"],
+  created: function created() {
+    var _this = this;
+
+    var userString = localStorage.getItem('user');
+
+    if (userString) {
+      var userData = JSON.parse(userString);
+      this.$store.commit('SET_USER_DATA', userData);
+    }
+
+    axios__WEBPACK_IMPORTED_MODULE_4___default.a.interceptors.response.use(function (response) {
+      return response;
+    }, function (error) {
+      if (error.response.status === 401) {
+        _this.$store.dispatch('logout');
+      }
+
+      return Promise.reject(error);
+    });
+  },
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
   }
@@ -21036,6 +21075,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     },
     logout: function logout(_ref5) {
       var commit = _ref5.commit;
+      commit('CLEAR_USER_DATA');
     }
   },
   getters: {
@@ -21054,7 +21094,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/adamcarter/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /Users/imac-work/GoSites/practice/vue-practice/src/app.js */"./src/app.js");
 
 
 /***/ })
